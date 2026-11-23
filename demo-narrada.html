@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <title>Animações narradas · demos – Tocador · com narração (voz do autor)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-00ad5a49dff614330cd349bcec985ec3.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Tocador · com narração (voz do autor)</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="antes-de-iniciar" class="slide level2">
+<h2>Antes de iniciar</h2>
+<p>O que acontece com a proporção de caras quando o número de lançamentos de uma moeda equilibrada cresce? Anote a sua previsão.</p>
+<p>A narração desta animação foi gravada com a voz do autor.</p>
+</section>
+<section id="proporção-de-caras" class="slide level2">
+<h2>Proporção de caras</h2>
+<style>
+/* animacao.css - aparencia do tocador das animacoes narradas (licenca MIT).
+   Arquivo so com ASCII. */
+.anim-aula { width: 80%; margin: 0 auto; }
+.anim-aula canvas {
+  display: block; width: 100%; height: auto; aspect-ratio: 1000 / 520;
+  border: 1px solid #d9dde3; border-radius: 6px; background: #ffffff;
+}
+.anim-aula .anim-legenda {
+  min-height: 2.6em; margin: 0.25em 0 0.2em; padding: 0.15em 0.4em;
+  font-size: 0.62em; line-height: 1.3; color: #2b2f36; text-align: center;
+}
+.anim-aula .anim-controles {
+  display: flex; align-items: center; gap: 0.5em; font-size: 0.5em;
+}
+.anim-aula button {
+  font: inherit; padding: 0.25em 0.8em; border: 1px solid #1d3b53;
+  border-radius: 4px; background: #1d3b53; color: #ffffff; cursor: pointer;
+}
+.anim-aula button.anim-recomecar { background: #ffffff; color: #1d3b53; }
+/* Botoes de alternar: o rotulo nao muda; o estado vai no aria-pressed e na aparencia. */
+.anim-aula button[aria-pressed] { background: #ffffff; color: #1d3b53; }
+.anim-aula button[aria-pressed="true"] { background: #e3ebf2; }
+.anim-aula button[aria-pressed="true"]::before { content: "\2713\00a0"; content: "\2713\00a0" / ""; }
+.anim-aula button[aria-pressed="false"] { text-decoration: line-through; color: #6b6b6b; border-color: #6b6b6b; }
+.anim-aula button[hidden] { display: none; }
+.anim-aula .anim-posicao { flex: 1; min-width: 6em; accent-color: #c8553d; cursor: pointer; }
+.anim-aula .anim-relogio { min-width: 6.5em; text-align: right; color: #595959; }
+/* Foco visivel para quem navega pelo teclado. */
+.anim-aula button:focus-visible, .anim-aula .anim-posicao:focus-visible,
+.anim-aula summary:focus-visible {
+  outline: 3px solid #c8553d; outline-offset: 2px;
+}
+.anim-aula .anim-transcricao {
+  margin-top: 0.3em; font-size: 0.45em; text-align: left; color: #2b2f36;
+}
+.anim-aula .anim-transcricao summary { cursor: pointer; color: #1d3b53; }
+/* Transcricao aberta: o quadro da lugar ao texto, que rola dentro do slide. */
+.anim-aula .anim-transcricao[open] { max-height: 24em; overflow-y: auto; }
+.anim-aula:has(.anim-transcricao[open]) canvas { display: none; }
+.anim-aula .anim-transcricao p { margin: 0.3em 0; }
+@media (prefers-reduced-motion: reduce) {
+  .anim-aula * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+</style>
+<script>
+/* animacao.js - tocador de animacoes narradas para slides Reveal.js.
+   Versao da apostila "Quarto com R para docentes de Estatistica", adaptada do
+   tocador das disciplinas do autor. Licenca MIT.
+
+   Sem bibliotecas externas. Arquivo so com ASCII: todo texto exibido vem da
+   configuracao (JSON gerado pelo R, R/animacao.R).
+
+   Uso:
+     AnimacaoAula.registrar("nome", function (ctx, t, dados, marcas, textos, W, H, estado) {...});
+     AnimacaoAula.criar(elementoRaiz, config);
+
+   A cena e uma funcao pura do tempo t (segundos): o quadro inteiro e
+   redesenhado a cada passo, o que permite pausar, recomecar e saltar.
+   estado.reduzido e true quando o sistema pede menos movimento
+   (prefers-reduced-motion); a cena decide o que simplificar.
+   O relogio e o do navegador; o audio, quando existe, acompanha o relogio
+   (e reposicionado se a diferenca passar de 0,25 s). */
+(function () {
+  "use strict";
+  if (window.AnimacaoAula) return;
+
+  var cenas = {};
+  var tocadores = [];
+  var CHAVE_LEGENDA = "animacao.legenda";
+
+  function registrar(nome, fn) { cenas[nome] = fn; }
+
+  function fmtTempo(s) {
+    s = Math.max(0, Math.floor(s));
+    var m = Math.floor(s / 60), r = s % 60;
+    return m + ":" + (r < 10 ? "0" : "") + r;
+  }
+
+  // localStorage pode faltar ou lancar erro (arquivo aberto em moldura isolada,
+  // navegacao privada, politica da instituicao): nesse caso vale o padrao.
+  function lerPreferencia(chave, padrao) {
+    try {
+      var v = window.localStorage.getItem(chave);
+      return v === null ? padrao : v === "1";
+    } catch (e) { return padrao; }
+  }
+  function gravarPreferencia(chave, valor) {
+    try { window.localStorage.setItem(chave, valor ? "1" : "0"); } catch (e) { /* sem memoria */ }
+  }
+
+  var consultaMovimento = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+
+  function criar(raiz, cfg) {
+    var W = cfg.largura, H = cfg.altura;
+    var canvas = raiz.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+    var caixaLegenda = raiz.querySelector(".anim-legenda");
+    var bIniciar = raiz.querySelector(".anim-iniciar");
+    var bRecomecar = raiz.querySelector(".anim-recomecar");
+    var bNarracao = raiz.querySelector(".anim-narracao");     // so existe com audio
+    var bLegenda = raiz.querySelector(".anim-legenda-btn");
+    var posicao = raiz.querySelector(".anim-posicao");        // <input type="range">
+    var relogio = raiz.querySelector(".anim-relogio");
+    var controles = raiz.querySelector(".anim-controles");
+    var audio = raiz.querySelector("audio");
+    var rot = cfg.rotulos;
+    var desenhar = cenas[cfg.cena];
+    var dur = cfg.duracao;
+    var leg = cfg.legendas;
+
+    var t = 0, tocando = false, narracao = true, audioOk = !!audio;
+    var tRef = 0, relRef = 0, pedido = null, legendaAtual = -2, segundoAtual = -1;
+    var legendaVisivel = lerPreferencia(CHAVE_LEGENDA, true);
+    var estado = { reduzido: !!(consultaMovimento && consultaMovimento.matches) };
+
+    function agora() { return performance.now() / 1000; }
+
+    // Legenda como regiao viva: "polite" quando ela e o unico canal (sem audio
+    // ou com a narracao desligada); "off" com a narracao audivel, para o leitor
+    // de tela nao falar por cima da voz. A transcricao completa fica abaixo.
+    function ajustarRegiaoViva() {
+      caixaLegenda.setAttribute("aria-live", (audioOk && narracao) ? "off" : "polite");
+    }
+
+    function semAudio() {
+      audioOk = false;
+      if (bNarracao) bNarracao.hidden = true;
+      ajustarRegiaoViva();
+    }
+    if (audio) audio.addEventListener("error", semAudio);
+    if (!audio && bNarracao) bNarracao.hidden = true;
+
+    function mostrarLegenda() {
+      caixaLegenda.style.visibility = legendaVisivel ? "visible" : "hidden";  // mantem a altura
+      bLegenda.setAttribute("aria-pressed", legendaVisivel ? "true" : "false");
+    }
+
+    function legendaEm(tt) {
+      for (var i = 0; i < leg.length; i++) {
+        var ate = leg[i].fim + 1.5;           // a frase fica ate a seguinte, ou 1,5 s
+        if (i + 1 < leg.length) ate = Math.min(ate, leg[i + 1].ini);
+        if (tt >= leg[i].ini && tt < ate) return i;
+      }
+      return -1;
+    }
+
+    function quadro() {
+      ctx.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, W, H);
+      ctx.globalAlpha = 1;
+      if (desenhar) {
+        ctx.save();
+        desenhar(ctx, t, cfg.dados, cfg.marcas, cfg.textos, W, H, estado);
+        ctx.restore();
+      }
+      var i = legendaEm(t);
+      if (i !== legendaAtual) {
+        legendaAtual = i;
+        caixaLegenda.textContent = i >= 0 ? leg[i].texto : (t === 0 ? rot.dica : "");
+      }
+      posicao.value = String(t);
+      var s = Math.floor(t);
+      if (s !== segundoAtual) {
+        segundoAtual = s;
+        var txt = fmtTempo(t) + " / " + fmtTempo(dur);
+        relogio.textContent = txt;
+        posicao.setAttribute("aria-valuetext", fmtTempo(t) + " " + rot.tempo_de + " " + fmtTempo(dur));
+      }
+    }
+
+    function sincronizarAudio() {
+      if (!audioOk) return;
+      if (!tocando || t >= audio.duration) {
+        if (!audio.paused) audio.pause();
+        return;
+      }
+      if (Math.abs(audio.currentTime - t) > 0.25) {
+        try { audio.currentTime = t; } catch (e) { /* ainda sem metadados */ }
+      }
+      if (audio.paused) {
+        var p = audio.play();
+        if (p && p.catch) p.catch(function () { semAudio(); });
+      }
+    }
+
+    function passo() {
+      if (!tocando) return;
+      t = tRef + (agora() - relRef);
+      if (t >= dur) { t = dur; parar(true); }
+      sincronizarAudio();
+      quadro();
+      if (tocando) pedido = requestAnimationFrame(passo);
+    }
+
+    function tocar() {
+      if (t >= dur) t = 0;
+      tocando = true;
+      tRef = t; relRef = agora();
+      bIniciar.textContent = rot.pausar;
+      sincronizarAudio();
+      pedido = requestAnimationFrame(passo);
+    }
+
+    function parar(fim) {
+      tocando = false;
+      if (pedido) cancelAnimationFrame(pedido);
+      pedido = null;
+      if (audioOk && !audio.paused) audio.pause();
+      bIniciar.textContent = fim ? rot.iniciar : rot.continuar;
+    }
+
+    function irPara(novo) {
+      t = Math.max(0, Math.min(dur, novo));
+      tRef = t; relRef = agora();
+      if (audioOk) { try { audio.currentTime = t; } catch (e) { /* idem */ } }
+      quadro();
+    }
+
+    // Clique com o mouse devolve o foco ao slide (as setas voltam a mudar de
+    // slide); acionado pelo teclado (detail = 0), o foco fica no botao.
+    function soltar(b, ev) { if (ev && ev.detail > 0) b.blur(); }
+
+    bIniciar.addEventListener("click", function (ev) {
+      if (tocando) parar(false); else tocar();
+      soltar(bIniciar, ev);
+    });
+    bRecomecar.addEventListener("click", function (ev) {
+      var estava = tocando;
+      if (estava) parar(false);
+      irPara(0);
+      bIniciar.textContent = rot.iniciar;
+      if (estava) tocar();
+      soltar(bRecomecar, ev);
+    });
+    if (bNarracao) {
+      bNarracao.addEventListener("click", function (ev) {
+        narracao = !narracao;
+        if (audio) audio.muted = !narracao;
+        bNarracao.setAttribute("aria-pressed", narracao ? "true" : "false");
+        ajustarRegiaoViva();
+        soltar(bNarracao, ev);
+      });
+    }
+    bLegenda.addEventListener("click", function (ev) {
+      legendaVisivel = !legendaVisivel;
+      gravarPreferencia(CHAVE_LEGENDA, legendaVisivel);
+      mostrarLegenda();
+      soltar(bLegenda, ev);
+    });
+
+    // Controle deslizante nativo: o mouse arrasta; o teclado salta 5 s
+    // (setas), 15 s (PageUp e PageDown), inicio e fim (Home e End).
+    posicao.min = "0";
+    posicao.max = String(dur);
+    posicao.step = "any";
+    posicao.addEventListener("input", function () {
+      irPara(parseFloat(posicao.value));
+    });
+    posicao.addEventListener("keydown", function (ev) {
+      var salto = { ArrowLeft: -5, ArrowDown: -5, ArrowRight: 5, ArrowUp: 5, PageDown: -15, PageUp: 15 };
+      if (ev.key in salto) irPara(t + salto[ev.key]);
+      else if (ev.key === "Home") irPara(0);
+      else if (ev.key === "End") irPara(dur);
+      else return;
+      ev.preventDefault();
+    });
+    posicao.addEventListener("change", function (ev) { soltar(posicao, ev); });
+
+    // Teclas dentro dos controles nao chegam ao Reveal.js (nao mudam o slide).
+    controles.addEventListener("keydown", function (ev) { ev.stopPropagation(); });
+
+    if (consultaMovimento) {
+      var aoMudar = function () { estado.reduzido = consultaMovimento.matches; quadro(); };
+      if (consultaMovimento.addEventListener) consultaMovimento.addEventListener("change", aoMudar);
+      else if (consultaMovimento.addListener) consultaMovimento.addListener(aoMudar);
+    }
+
+    var tocador = { raiz: raiz, parar: function () { if (tocando) parar(false); },
+                    irPara: irPara, tempo: function () { return t; },
+                    tocando: function () { return tocando; }, quadro: quadro,
+                    movimentoReduzido: function () { return estado.reduzido; } };
+    tocadores.push(tocador);
+    raiz.animacao = tocador;
+    mostrarLegenda();
+    ajustarRegiaoViva();
+    quadro();
+    return tocador;
+  }
+
+  // Ao sair do slide, a animacao para (e o audio junto).
+  function ligarReveal() {
+    if (!window.Reveal || !window.Reveal.on) return false;
+    window.Reveal.on("slidechanged", function (ev) {
+      tocadores.forEach(function (p) {
+        if (!ev.currentSlide || !ev.currentSlide.contains(p.raiz)) p.parar();
+      });
+    });
+    return true;
+  }
+  if (!ligarReveal()) {
+    window.addEventListener("load", function () { ligarReveal(); });
+  }
+
+  window.AnimacaoAula = { registrar: registrar, criar: criar, fmtTempo: fmtTempo };
+})();
+</script>
+<script>
+/* cena_proporcao.js - cena minima: proporcao de caras ao longo dos lancamentos
+   de uma moeda (dados simulados no R, animacao/config_proporcao.R).
+   Funcao pura do tempo t. Arquivo so com ASCII; todo texto vem de tx. */
+AnimacaoAula.registrar("proporcao", function (ctx, t, d, m, tx, W, H, estado) {
+  "use strict";
+  var AZUL = "#1d3b53", LARANJA = "#c8553d", CINZA = "#6b6b6b", ESCURO = "#2b2f36",
+      FONTE = "Source Sans Pro, Helvetica, Arial, sans-serif";
+  var x0 = 110, x1 = 940, yt = 90, yb = 430;
+
+  function lim(u) { return Math.max(0, Math.min(1, u)); }
+  // Transicao suave; com movimento reduzido, troca direta.
+  function fase(ini, dur) {
+    if (estado.reduzido) return t >= ini ? 1 : 0;
+    var u = lim((t - ini) / dur);
+    return u * u * (3 - 2 * u);
+  }
+  function texto(s, x, y, tam, cor, alin, negrito) {
+    ctx.font = (negrito ? "bold " : "") + tam + "px " + FONTE;
+    ctx.fillStyle = cor; ctx.textAlign = alin || "left"; ctx.textBaseline = "middle";
+    ctx.fillText(s, x, y);
+  }
+  function px(k) { return x0 + k / d.n * (x1 - x0); }
+  function py(p) { return yb - p * (yb - yt); }
+
+  // Titulo e aviso de dados simulados
+  texto(tx.titulo, W / 2, 36, 24, ESCURO, "center", true);
+  texto(tx.simulados, x1, 64, 16, LARANJA, "right");
+
+  // Eixos, com os rotulos vindos do R
+  ctx.strokeStyle = CINZA; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x0, yt); ctx.lineTo(x0, yb); ctx.lineTo(x1, yb); ctx.stroke();
+  var i;
+  for (i = 0; i < d.ticks_y.length; i++) {
+    var y = py(d.ticks_y[i]);
+    ctx.beginPath(); ctx.moveTo(x0 - 6, y); ctx.lineTo(x0, y); ctx.stroke();
+    texto(d.rotulos_y[i], x0 - 12, y, 16, CINZA, "right");
+  }
+  for (i = 0; i < d.ticks_x.length; i++) {
+    var x = px(d.ticks_x[i]);
+    ctx.beginPath(); ctx.moveTo(x, yb); ctx.lineTo(x, yb + 6); ctx.stroke();
+    texto(d.rotulos_x[i], x, yb + 20, 16, CINZA, "center");
+  }
+  texto(tx.eixo_x, (x0 + x1) / 2, yb + 50, 18, ESCURO, "center");
+  ctx.save();
+  ctx.translate(36, (yt + yb) / 2); ctx.rotate(-Math.PI / 2);
+  texto(tx.eixo_y, 0, 0, 18, ESCURO, "center");
+  ctx.restore();
+
+  // Linha de referencia (probabilidade de cara), aparece na ultima frase
+  var aRef = fase(m.referencia, 1.0);
+  if (aRef > 0) {
+    ctx.globalAlpha = aRef;
+    ctx.setLineDash([8, 6]); ctx.strokeStyle = LARANJA; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x0, py(d.p)); ctx.lineTo(x1, py(d.p)); ctx.stroke();
+    ctx.setLineDash([]);
+    texto(tx.referencia, x1 - 4, py(d.p) - 16, 16, LARANJA, "right");
+    ctx.globalAlpha = 1;
+  }
+
+  // Curva: cresce de m.curva_ini a m.curva_fim (crescimento linear, e o conteudo da cena)
+  var k = Math.round(lim((t - m.curva_ini) / (m.curva_fim - m.curva_ini)) * d.n);
+  if (k > 0) {
+    ctx.strokeStyle = AZUL; ctx.lineWidth = 3; ctx.lineJoin = "round";
+    ctx.beginPath();
+    for (i = 0; i < k; i++) {
+      if (i === 0) ctx.moveTo(px(1), py(d.prop[0])); else ctx.lineTo(px(i + 1), py(d.prop[i]));
+    }
+    ctx.stroke();
+    ctx.fillStyle = AZUL;
+    ctx.beginPath(); ctx.arc(px(k), py(d.prop[k - 1]), 6, 0, 2 * Math.PI); ctx.fill();
+    texto(tx.contagem + k + "   " + tx.proporcao + d.prop_txt[k - 1], x0, 64, 18, AZUL, "left");
+  }
+});
+</script>
+<div class="anim-aula" id="narrada">
+<noscript><p>Esta animação precisa de JavaScript. A transcrição da narração está abaixo.</p></noscript>
+<canvas width="2000" height="1040" role="img" aria-label="Animação com dados simulados: proporção de caras ao longo de 200 lançamentos de uma moeda equilibrada. A curva oscila muito no começo e termina em 0,44, perto da metade, sem ser igual a ela."></canvas>
+<div class="anim-legenda" id="narrada-legenda" aria-live="polite"></div>
+<div class="anim-controles" role="group" aria-label="Controles da animação">
+<button type="button" class="anim-iniciar">Iniciar</button>
+<button type="button" class="anim-recomecar">Recomeçar</button>
+<button type="button" class="anim-narracao" aria-pressed="true">Narração</button>
+<button type="button" class="anim-legenda-btn" aria-pressed="true" aria-controls="narrada-legenda">Legenda</button>
+<input type="range" class="anim-posicao" min="0" max="31.04004" step="any" value="0" aria-label="Posição na animação">
+<span class="anim-relogio" aria-hidden="true"></span>
+</div>
+<audio preload="auto" src="animacao/audio/narracao.mp3"></audio>
+<details class="anim-transcricao">
+<summary>Transcrição da narração</summary>
+<p>Uma moeda equilibrada é lançada duzentas vezes, em dados simulados. A curva mostra a proporção de caras depois de cada lançamento. No começo, a proporção oscila muito, porque cada lançamento pesa bastante. Com mais lançamentos, ela fica perto da metade, sem ser igual a ela.</p>
+</details>
+</div>
+<script>AnimacaoAula.criar(document.getElementById("narrada"), {"cena":"proporcao","duracao":31.0400416666667,"legendas":[{"ini":2,"fim":7.24,"texto":"Uma moeda equilibrada é lançada duzentas vezes, em dados simulados.","cena":1},{"ini":7.74,"fim":11.98,"texto":"A curva mostra a proporção de caras depois de cada lançamento.","cena":1},{"ini":16.48,"fim":22.5200416666667,"texto":"No começo, a proporção oscila muito, porque cada lançamento pesa bastante.","cena":1},{"ini":23.0200416666667,"fim":28.0400416666667,"texto":"Com mais lançamentos, ela fica perto da metade, sem ser igual a ela.","cena":1}],"marcas":{"curva_ini":7.74,"curva_fim":23.0200416666667,"referencia":23.0200416666667},"dados":{"n":200,"p":0.5,"prop":[1,1,0.6667,0.5,0.6,0.5,0.4286,0.5,0.4444,0.5,0.4545,0.5,0.4615,0.5,0.4667,0.4375,0.4706,0.4444,0.4211,0.4,0.381,0.3636,0.3478,0.3333,0.32,0.3077,0.2963,0.2857,0.2759,0.3,0.3226,0.3125,0.3333,0.3235,0.3429,0.3333,0.3243,0.3158,0.3333,0.325,0.3171,0.3333,0.3256,0.3182,0.3111,0.3043,0.3191,0.3125,0.3265,0.32,0.3333,0.3462,0.3585,0.3704,0.3818,0.3929,0.4035,0.3966,0.4068,0.4,0.3934,0.4032,0.4127,0.4062,0.4,0.3939,0.403,0.3971,0.4058,0.4143,0.4225,0.4167,0.4247,0.4324,0.4267,0.4342,0.4416,0.4487,0.443,0.45,0.4444,0.4512,0.4578,0.4643,0.4588,0.4651,0.4713,0.4773,0.4719,0.4667,0.4725,0.4783,0.4839,0.4787,0.4737,0.4688,0.4742,0.4694,0.4747,0.47,0.4653,0.4706,0.466,0.4615,0.4571,0.4528,0.4579,0.463,0.4587,0.4636,0.4595,0.4643,0.4602,0.4561,0.4522,0.4483,0.453,0.4492,0.4454,0.45,0.4463,0.4426,0.4472,0.4516,0.448,0.4444,0.4409,0.4375,0.4341,0.4308,0.4275,0.4318,0.4286,0.4254,0.4296,0.4265,0.4234,0.4275,0.4317,0.4286,0.4326,0.4296,0.4336,0.4375,0.4414,0.4384,0.4354,0.4392,0.443,0.44,0.4371,0.4342,0.4379,0.4416,0.4452,0.4487,0.4459,0.4494,0.4528,0.45,0.4472,0.4506,0.454,0.4512,0.4485,0.4458,0.4431,0.4405,0.4379,0.4353,0.4386,0.4419,0.4393,0.4425,0.44,0.4432,0.4463,0.4494,0.4525,0.4556,0.453,0.4505,0.4536,0.4565,0.4541,0.4516,0.4545,0.4521,0.4497,0.4474,0.445,0.4427,0.4404,0.4433,0.441,0.4388,0.4365,0.4394,0.4422,0.44],"prop_txt":["1,00","1,00","0,67","0,50","0,60","0,50","0,43","0,50","0,44","0,50","0,45","0,50","0,46","0,50","0,47","0,44","0,47","0,44","0,42","0,40","0,38","0,36","0,35","0,33","0,32","0,31","0,30","0,29","0,28","0,30","0,32","0,31","0,33","0,32","0,34","0,33","0,32","0,32","0,33","0,32","0,32","0,33","0,33","0,32","0,31","0,30","0,32","0,31","0,33","0,32","0,33","0,35","0,36","0,37","0,38","0,39","0,40","0,40","0,41","0,40","0,39","0,40","0,41","0,41","0,40","0,39","0,40","0,40","0,41","0,41","0,42","0,42","0,42","0,43","0,43","0,43","0,44","0,45","0,44","0,45","0,44","0,45","0,46","0,46","0,46","0,47","0,47","0,48","0,47","0,47","0,47","0,48","0,48","0,48","0,47","0,47","0,47","0,47","0,47","0,47","0,47","0,47","0,47","0,46","0,46","0,45","0,46","0,46","0,46","0,46","0,46","0,46","0,46","0,46","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,44","0,45","0,45","0,45","0,44","0,44","0,44","0,43","0,43","0,43","0,43","0,43","0,43","0,43","0,43","0,42","0,43","0,43","0,43","0,43","0,43","0,43","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,43","0,44","0,44","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,45","0,45","0,45","0,46","0,45","0,45","0,45","0,46","0,45","0,45","0,45","0,45","0,45","0,45","0,45","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,44","0,44"],"ticks_y":[0,0.25,0.5,0.75,1],"rotulos_y":["0","0,25","0,5","0,75","1"],"ticks_x":[0,50,100,150,200],"rotulos_x":["0","50","100","150","200"]},"textos":{"titulo":"Proporção de caras em 200 lançamentos de uma moeda equilibrada","simulados":"dados simulados · voz do autor","eixo_x":"número de lançamentos","eixo_y":"proporção de caras","referencia":"metade (probabilidade de cara)","contagem":"lançamentos: ","proporcao":"proporção de caras: "},"rotulos":{"iniciar":"Iniciar","pausar":"Pausar","continuar":"Continuar","recomecar":"Recomeçar","narracao":"Narração","legenda":"Legenda","posicao":"Posição na animação","tempo_de":"de","controles":"Controles da animação","transcricao":"Transcrição da narração","sem_js":"Esta animação precisa de JavaScript. A transcrição da narração está abaixo.","dica":"Antes de iniciar: o que acontece com a proporção de caras quando o número de lançamentos cresce?","descricao":"Animação com dados simulados: proporção de caras ao longo de 200 lançamentos de uma moeda equilibrada. A curva oscila muito no começo e termina em 0,44, perto da metade, sem ser igual a ela."},"largura":1000,"altura":520});</script>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiada");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiada");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+              if (!link.classList.contains('no-external-icon')) {
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

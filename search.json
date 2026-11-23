@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Animações narradas · demos",
+    "section": "",
+    "text": "Site companheiro dos Capítulos 4 e 5 da apostila Quarto com R para docentes de Estatística. As demos são as mesmas dos exemplos dos capítulos (cap4/exemplos/ e cap5/exemplos/); todos os dados são simulados.\n\n\n\nDemo\nO que mostra\n\n\n\n\nTocador\nA cena mínima: proporção de caras, sem áudio\n\n\nNarração\nA mesma cena com narração em áudio (voz do autor)\n\n\nCenas\nIntervalos de confiança e área sob a Normal padrão\n\n\ngganimate e OJS\nGIF, MP4 e um controle deslizante, sem o tocador\n\n\nVídeo\nVídeo de exemplo do Cap. 5 num slide, com legenda .vtt\n\n\n\nA demo de narração e a demo de vídeo usam a voz do autor; a demo do gganimate não tem voz.\nCódigo do tocador e dos scripts: licença MIT. Texto: CC BY-NC-SA 4.0."
+  },
+  {
+    "objectID": "demo-tocador.html#antes-de-iniciar",
+    "href": "demo-tocador.html#antes-de-iniciar",
+    "title": "Tocador · cena mínima",
+    "section": "Antes de iniciar",
+    "text": "Antes de iniciar\nO que acontece com a proporção de caras quando o número de lançamentos de uma moeda equilibrada cresce? Anote a sua previsão."
+  },
+  {
+    "objectID": "demo-tocador.html#proporção-de-caras",
+    "href": "demo-tocador.html#proporção-de-caras",
+    "title": "Tocador · cena mínima",
+    "section": "Proporção de caras",
+    "text": "Proporção de caras\n\n\n\n\nEsta animação precisa de JavaScript. A transcrição da narração está abaixo.\n\n\n\nIniciar\nRecomeçar\nLegenda\n\n\n\n\nTranscrição da narração\nUma moeda equilibrada é lançada duzentas vezes, em dados simulados. A curva mostra a proporção de caras depois de cada lançamento. No começo, a proporção oscila muito, porque cada lançamento pesa bastante. Com mais lançamentos, ela fica perto da metade, sem ser igual a ela."
+  },
+  {
+    "objectID": "demo-gganimate.html#gif-feito-com-o-gganimate",
+    "href": "demo-gganimate.html#gif-feito-com-o-gganimate",
+    "title": "gganimate e controle deslizante em OJS",
+    "section": "GIF feito com o gganimate",
+    "text": "GIF feito com o gganimate\n\nProporção de caras em 200 lançamentos (dados simulados)."
+  },
+  {
+    "objectID": "demo-gganimate.html#mp4-feito-com-o-gganimate",
+    "href": "demo-gganimate.html#mp4-feito-com-o-gganimate",
+    "title": "gganimate e controle deslizante em OJS",
+    "section": "MP4 feito com o gganimate",
+    "text": "MP4 feito com o gganimate"
+  },
+  {
+    "objectID": "demo-gganimate.html#controle-deslizante-em-ojs",
+    "href": "demo-gganimate.html#controle-deslizante-em-ojs",
+    "title": "gganimate e controle deslizante em OJS",
+    "section": "Controle deslizante em OJS",
+    "text": "Controle deslizante em OJS\n\nviewof k = Inputs.range([1, n_total], {value: 20, step: 1, label: \"lançamentos\", width: 520})\n\n\n\n\n\n\n\nserie = Array.from({length: k}, (_, i) =&gt; ({lancamento: i + 1, proporcao: prop[i]}))\nPlot.plot({\n  width: 1000, height: 340, marginLeft: 70, marginBottom: 50, style: {fontSize: \"20px\"},\n  x: {domain: [0, n_total], label: \"número de lançamentos\"},\n  y: {domain: [0, 1], label: \"proporção de caras\"},\n  marks: [Plot.ruleY([0.5], {strokeDasharray: \"4\"}), Plot.line(serie, {x: \"lancamento\", y: \"proporcao\", stroke: \"#1d3b53\"})]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvirg = (x, d) =&gt; x.toFixed(d).replace(\".\", \",\")\nhtml`&lt;p&gt;Depois de ${k} lançamentos, a proporção de caras é ${virg(prop[k - 1], 3)}. No fim (${n_total} lançamentos): ${virg(prop[n_total - 1], 3)}.&lt;/p&gt;`"
+  },
+  {
+    "objectID": "demo-cenas.html#intervalos-de-confiança",
+    "href": "demo-cenas.html#intervalos-de-confiança",
+    "title": "Cenas de exemplo",
+    "section": "Intervalos de confiança",
+    "text": "Intervalos de confiança\n\n\n\n\nEsta animação precisa de JavaScript. A transcrição da narração está abaixo.\n\n\n\nIniciar\nRecomeçar\nLegenda\n\n\n\n\nTranscrição da narração\nVinte amostras de tamanho vinte e cinco foram simuladas de uma população Normal de média cinquenta. Para cada amostra, o R calcula um intervalo de confiança de noventa e cinco por cento para a média. Os segmentos azuis cruzam a linha da média verdadeira; os laranja não a alcançam. Aqui, dezenove dos vinte intervalos contêm a média. A confiança se refere ao procedimento, e não a um intervalo já calculado."
+  },
+  {
+    "objectID": "demo-cenas.html#área-sob-a-normal-padrão",
+    "href": "demo-cenas.html#área-sob-a-normal-padrão",
+    "title": "Cenas de exemplo",
+    "section": "Área sob a Normal padrão",
+    "text": "Área sob a Normal padrão\n\n\nEsta animação precisa de JavaScript. A transcrição da narração está abaixo.\n\n\n\nIniciar\nRecomeçar\nLegenda\n\n\n\n\nTranscrição da narração\nA curva é a densidade da Normal padrão, de média zero e variância um. A área sombreada, à esquerda do ponto z, é a probabilidade de Z ser menor ou igual a z. Quando z anda para a direita, a área cresce e se aproxima de um. Em z igual a um vírgula noventa e seis, a área é zero vírgula novecentos e setenta e cinco."
+  },
+  {
+    "objectID": "demo-narrada.html#antes-de-iniciar",
+    "href": "demo-narrada.html#antes-de-iniciar",
+    "title": "Tocador · com narração (voz do autor)",
+    "section": "Antes de iniciar",
+    "text": "Antes de iniciar\nO que acontece com a proporção de caras quando o número de lançamentos de uma moeda equilibrada cresce? Anote a sua previsão.\nA narração desta animação foi gravada com a voz do autor."
+  },
+  {
+    "objectID": "demo-narrada.html#proporção-de-caras",
+    "href": "demo-narrada.html#proporção-de-caras",
+    "title": "Tocador · com narração (voz do autor)",
+    "section": "Proporção de caras",
+    "text": "Proporção de caras\n\n\n\n\nEsta animação precisa de JavaScript. A transcrição da narração está abaixo.\n\n\n\nIniciar\nRecomeçar\nNarração\nLegenda\n\n\n\n\n\nTranscrição da narração\nUma moeda equilibrada é lançada duzentas vezes, em dados simulados. A curva mostra a proporção de caras depois de cada lançamento. No começo, a proporção oscila muito, porque cada lançamento pesa bastante. Com mais lançamentos, ela fica perto da metade, sem ser igual a ela."
+  },
+  {
+    "objectID": "demo-video.html#o-vídeo-no-slide",
+    "href": "demo-video.html#o-vídeo-no-slide",
+    "title": "Vídeo de exemplo com legenda",
+    "section": "O vídeo no slide",
+    "text": "O vídeo no slide\n\n\n  \n  \n\nVídeo curto e substituível: dados simulados e narração com a voz do autor."
+  }
+]

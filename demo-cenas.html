@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <title>Animações narradas · demos – Cenas de exemplo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-00ad5a49dff614330cd349bcec985ec3.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Cenas de exemplo</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="intervalos-de-confiança" class="slide level2">
+<h2>Intervalos de confiança</h2>
+<style>
+/* animacao.css - aparencia do tocador das animacoes narradas (licenca MIT).
+   Arquivo so com ASCII. */
+.anim-aula { width: 80%; margin: 0 auto; }
+.anim-aula canvas {
+  display: block; width: 100%; height: auto; aspect-ratio: 1000 / 520;
+  border: 1px solid #d9dde3; border-radius: 6px; background: #ffffff;
+}
+.anim-aula .anim-legenda {
+  min-height: 2.6em; margin: 0.25em 0 0.2em; padding: 0.15em 0.4em;
+  font-size: 0.62em; line-height: 1.3; color: #2b2f36; text-align: center;
+}
+.anim-aula .anim-controles {
+  display: flex; align-items: center; gap: 0.5em; font-size: 0.5em;
+}
+.anim-aula button {
+  font: inherit; padding: 0.25em 0.8em; border: 1px solid #1d3b53;
+  border-radius: 4px; background: #1d3b53; color: #ffffff; cursor: pointer;
+}
+.anim-aula button.anim-recomecar { background: #ffffff; color: #1d3b53; }
+/* Botoes de alternar: o rotulo nao muda; o estado vai no aria-pressed e na aparencia. */
+.anim-aula button[aria-pressed] { background: #ffffff; color: #1d3b53; }
+.anim-aula button[aria-pressed="true"] { background: #e3ebf2; }
+.anim-aula button[aria-pressed="true"]::before { content: "\2713\00a0"; content: "\2713\00a0" / ""; }
+.anim-aula button[aria-pressed="false"] { text-decoration: line-through; color: #6b6b6b; border-color: #6b6b6b; }
+.anim-aula button[hidden] { display: none; }
+.anim-aula .anim-posicao { flex: 1; min-width: 6em; accent-color: #c8553d; cursor: pointer; }
+.anim-aula .anim-relogio { min-width: 6.5em; text-align: right; color: #595959; }
+/* Foco visivel para quem navega pelo teclado. */
+.anim-aula button:focus-visible, .anim-aula .anim-posicao:focus-visible,
+.anim-aula summary:focus-visible {
+  outline: 3px solid #c8553d; outline-offset: 2px;
+}
+.anim-aula .anim-transcricao {
+  margin-top: 0.3em; font-size: 0.45em; text-align: left; color: #2b2f36;
+}
+.anim-aula .anim-transcricao summary { cursor: pointer; color: #1d3b53; }
+/* Transcricao aberta: o quadro da lugar ao texto, que rola dentro do slide. */
+.anim-aula .anim-transcricao[open] { max-height: 24em; overflow-y: auto; }
+.anim-aula:has(.anim-transcricao[open]) canvas { display: none; }
+.anim-aula .anim-transcricao p { margin: 0.3em 0; }
+@media (prefers-reduced-motion: reduce) {
+  .anim-aula * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+</style>
+<script>
+/* animacao.js - tocador de animacoes narradas para slides Reveal.js.
+   Versao da apostila "Quarto com R para docentes de Estatistica", adaptada do
+   tocador das disciplinas do autor. Licenca MIT.
+
+   Sem bibliotecas externas. Arquivo so com ASCII: todo texto exibido vem da
+   configuracao (JSON gerado pelo R, R/animacao.R).
+
+   Uso:
+     AnimacaoAula.registrar("nome", function (ctx, t, dados, marcas, textos, W, H, estado) {...});
+     AnimacaoAula.criar(elementoRaiz, config);
+
+   A cena e uma funcao pura do tempo t (segundos): o quadro inteiro e
+   redesenhado a cada passo, o que permite pausar, recomecar e saltar.
+   estado.reduzido e true quando o sistema pede menos movimento
+   (prefers-reduced-motion); a cena decide o que simplificar.
+   O relogio e o do navegador; o audio, quando existe, acompanha o relogio
+   (e reposicionado se a diferenca passar de 0,25 s). */
+(function () {
+  "use strict";
+  if (window.AnimacaoAula) return;
+
+  var cenas = {};
+  var tocadores = [];
+  var CHAVE_LEGENDA = "animacao.legenda";
+
+  function registrar(nome, fn) { cenas[nome] = fn; }
+
+  function fmtTempo(s) {
+    s = Math.max(0, Math.floor(s));
+    var m = Math.floor(s / 60), r = s % 60;
+    return m + ":" + (r < 10 ? "0" : "") + r;
+  }
+
+  // localStorage pode faltar ou lancar erro (arquivo aberto em moldura isolada,
+  // navegacao privada, politica da instituicao): nesse caso vale o padrao.
+  function lerPreferencia(chave, padrao) {
+    try {
+      var v = window.localStorage.getItem(chave);
+      return v === null ? padrao : v === "1";
+    } catch (e) { return padrao; }
+  }
+  function gravarPreferencia(chave, valor) {
+    try { window.localStorage.setItem(chave, valor ? "1" : "0"); } catch (e) { /* sem memoria */ }
+  }
+
+  var consultaMovimento = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+
+  function criar(raiz, cfg) {
+    var W = cfg.largura, H = cfg.altura;
+    var canvas = raiz.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+    var caixaLegenda = raiz.querySelector(".anim-legenda");
+    var bIniciar = raiz.querySelector(".anim-iniciar");
+    var bRecomecar = raiz.querySelector(".anim-recomecar");
+    var bNarracao = raiz.querySelector(".anim-narracao");     // so existe com audio
+    var bLegenda = raiz.querySelector(".anim-legenda-btn");
+    var posicao = raiz.querySelector(".anim-posicao");        // <input type="range">
+    var relogio = raiz.querySelector(".anim-relogio");
+    var controles = raiz.querySelector(".anim-controles");
+    var audio = raiz.querySelector("audio");
+    var rot = cfg.rotulos;
+    var desenhar = cenas[cfg.cena];
+    var dur = cfg.duracao;
+    var leg = cfg.legendas;
+
+    var t = 0, tocando = false, narracao = true, audioOk = !!audio;
+    var tRef = 0, relRef = 0, pedido = null, legendaAtual = -2, segundoAtual = -1;
+    var legendaVisivel = lerPreferencia(CHAVE_LEGENDA, true);
+    var estado = { reduzido: !!(consultaMovimento && consultaMovimento.matches) };
+
+    function agora() { return performance.now() / 1000; }
+
+    // Legenda como regiao viva: "polite" quando ela e o unico canal (sem audio
+    // ou com a narracao desligada); "off" com a narracao audivel, para o leitor
+    // de tela nao falar por cima da voz. A transcricao completa fica abaixo.
+    function ajustarRegiaoViva() {
+      caixaLegenda.setAttribute("aria-live", (audioOk && narracao) ? "off" : "polite");
+    }
+
+    function semAudio() {
+      audioOk = false;
+      if (bNarracao) bNarracao.hidden = true;
+      ajustarRegiaoViva();
+    }
+    if (audio) audio.addEventListener("error", semAudio);
+    if (!audio && bNarracao) bNarracao.hidden = true;
+
+    function mostrarLegenda() {
+      caixaLegenda.style.visibility = legendaVisivel ? "visible" : "hidden";  // mantem a altura
+      bLegenda.setAttribute("aria-pressed", legendaVisivel ? "true" : "false");
+    }
+
+    function legendaEm(tt) {
+      for (var i = 0; i < leg.length; i++) {
+        var ate = leg[i].fim + 1.5;           // a frase fica ate a seguinte, ou 1,5 s
+        if (i + 1 < leg.length) ate = Math.min(ate, leg[i + 1].ini);
+        if (tt >= leg[i].ini && tt < ate) return i;
+      }
+      return -1;
+    }
+
+    function quadro() {
+      ctx.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, W, H);
+      ctx.globalAlpha = 1;
+      if (desenhar) {
+        ctx.save();
+        desenhar(ctx, t, cfg.dados, cfg.marcas, cfg.textos, W, H, estado);
+        ctx.restore();
+      }
+      var i = legendaEm(t);
+      if (i !== legendaAtual) {
+        legendaAtual = i;
+        caixaLegenda.textContent = i >= 0 ? leg[i].texto : (t === 0 ? rot.dica : "");
+      }
+      posicao.value = String(t);
+      var s = Math.floor(t);
+      if (s !== segundoAtual) {
+        segundoAtual = s;
+        var txt = fmtTempo(t) + " / " + fmtTempo(dur);
+        relogio.textContent = txt;
+        posicao.setAttribute("aria-valuetext", fmtTempo(t) + " " + rot.tempo_de + " " + fmtTempo(dur));
+      }
+    }
+
+    function sincronizarAudio() {
+      if (!audioOk) return;
+      if (!tocando || t >= audio.duration) {
+        if (!audio.paused) audio.pause();
+        return;
+      }
+      if (Math.abs(audio.currentTime - t) > 0.25) {
+        try { audio.currentTime = t; } catch (e) { /* ainda sem metadados */ }
+      }
+      if (audio.paused) {
+        var p = audio.play();
+        if (p && p.catch) p.catch(function () { semAudio(); });
+      }
+    }
+
+    function passo() {
+      if (!tocando) return;
+      t = tRef + (agora() - relRef);
+      if (t >= dur) { t = dur; parar(true); }
+      sincronizarAudio();
+      quadro();
+      if (tocando) pedido = requestAnimationFrame(passo);
+    }
+
+    function tocar() {
+      if (t >= dur) t = 0;
+      tocando = true;
+      tRef = t; relRef = agora();
+      bIniciar.textContent = rot.pausar;
+      sincronizarAudio();
+      pedido = requestAnimationFrame(passo);
+    }
+
+    function parar(fim) {
+      tocando = false;
+      if (pedido) cancelAnimationFrame(pedido);
+      pedido = null;
+      if (audioOk && !audio.paused) audio.pause();
+      bIniciar.textContent = fim ? rot.iniciar : rot.continuar;
+    }
+
+    function irPara(novo) {
+      t = Math.max(0, Math.min(dur, novo));
+      tRef = t; relRef = agora();
+      if (audioOk) { try { audio.currentTime = t; } catch (e) { /* idem */ } }
+      quadro();
+    }
+
+    // Clique com o mouse devolve o foco ao slide (as setas voltam a mudar de
+    // slide); acionado pelo teclado (detail = 0), o foco fica no botao.
+    function soltar(b, ev) { if (ev && ev.detail > 0) b.blur(); }
+
+    bIniciar.addEventListener("click", function (ev) {
+      if (tocando) parar(false); else tocar();
+      soltar(bIniciar, ev);
+    });
+    bRecomecar.addEventListener("click", function (ev) {
+      var estava = tocando;
+      if (estava) parar(false);
+      irPara(0);
+      bIniciar.textContent = rot.iniciar;
+      if (estava) tocar();
+      soltar(bRecomecar, ev);
+    });
+    if (bNarracao) {
+      bNarracao.addEventListener("click", function (ev) {
+        narracao = !narracao;
+        if (audio) audio.muted = !narracao;
+        bNarracao.setAttribute("aria-pressed", narracao ? "true" : "false");
+        ajustarRegiaoViva();
+        soltar(bNarracao, ev);
+      });
+    }
+    bLegenda.addEventListener("click", function (ev) {
+      legendaVisivel = !legendaVisivel;
+      gravarPreferencia(CHAVE_LEGENDA, legendaVisivel);
+      mostrarLegenda();
+      soltar(bLegenda, ev);
+    });
+
+    // Controle deslizante nativo: o mouse arrasta; o teclado salta 5 s
+    // (setas), 15 s (PageUp e PageDown), inicio e fim (Home e End).
+    posicao.min = "0";
+    posicao.max = String(dur);
+    posicao.step = "any";
+    posicao.addEventListener("input", function () {
+      irPara(parseFloat(posicao.value));
+    });
+    posicao.addEventListener("keydown", function (ev) {
+      var salto = { ArrowLeft: -5, ArrowDown: -5, ArrowRight: 5, ArrowUp: 5, PageDown: -15, PageUp: 15 };
+      if (ev.key in salto) irPara(t + salto[ev.key]);
+      else if (ev.key === "Home") irPara(0);
+      else if (ev.key === "End") irPara(dur);
+      else return;
+      ev.preventDefault();
+    });
+    posicao.addEventListener("change", function (ev) { soltar(posicao, ev); });
+
+    // Teclas dentro dos controles nao chegam ao Reveal.js (nao mudam o slide).
+    controles.addEventListener("keydown", function (ev) { ev.stopPropagation(); });
+
+    if (consultaMovimento) {
+      var aoMudar = function () { estado.reduzido = consultaMovimento.matches; quadro(); };
+      if (consultaMovimento.addEventListener) consultaMovimento.addEventListener("change", aoMudar);
+      else if (consultaMovimento.addListener) consultaMovimento.addListener(aoMudar);
+    }
+
+    var tocador = { raiz: raiz, parar: function () { if (tocando) parar(false); },
+                    irPara: irPara, tempo: function () { return t; },
+                    tocando: function () { return tocando; }, quadro: quadro,
+                    movimentoReduzido: function () { return estado.reduzido; } };
+    tocadores.push(tocador);
+    raiz.animacao = tocador;
+    mostrarLegenda();
+    ajustarRegiaoViva();
+    quadro();
+    return tocador;
+  }
+
+  // Ao sair do slide, a animacao para (e o audio junto).
+  function ligarReveal() {
+    if (!window.Reveal || !window.Reveal.on) return false;
+    window.Reveal.on("slidechanged", function (ev) {
+      tocadores.forEach(function (p) {
+        if (!ev.currentSlide || !ev.currentSlide.contains(p.raiz)) p.parar();
+      });
+    });
+    return true;
+  }
+  if (!ligarReveal()) {
+    window.addEventListener("load", function () { ligarReveal(); });
+  }
+
+  window.AnimacaoAula = { registrar: registrar, criar: criar, fmtTempo: fmtTempo };
+})();
+</script>
+<script>
+/* cena_intervalos.js - intervalos de confianca aparecem um a um ao lado da
+   media verdadeira (dados simulados no R, animacao/config_intervalos.R).
+   Funcao pura do tempo t. Arquivo so com ASCII; todo texto vem de tx. */
+AnimacaoAula.registrar("intervalos", function (ctx, t, d, m, tx, W, H, estado) {
+  "use strict";
+  var AZUL = "#1d3b53", LARANJA = "#c8553d", CINZA = "#6b6b6b", ESCURO = "#2b2f36",
+      FONTE = "Source Sans Pro, Helvetica, Arial, sans-serif";
+  var x0 = 120, x1 = 900, yt = 100, yb = 440;
+
+  function lim(u) { return Math.max(0, Math.min(1, u)); }
+  function fase(ini, dur) {
+    if (estado.reduzido) return t >= ini ? 1 : 0;
+    var u = lim((t - ini) / dur);
+    return u * u * (3 - 2 * u);
+  }
+  function texto(s, x, y, tam, cor, alin, negrito) {
+    ctx.font = (negrito ? "bold " : "") + tam + "px " + FONTE;
+    ctx.fillStyle = cor; ctx.textAlign = alin || "left"; ctx.textBaseline = "middle";
+    ctx.fillText(s, x, y);
+  }
+  function px(v) { return x0 + (v - d.xmin) / (d.xmax - d.xmin) * (x1 - x0); }
+  function py(i) { return yt + (i + 0.5) / d.m * (yb - yt); }
+
+  texto(tx.titulo, W / 2, 34, 24, ESCURO, "center", true);
+  texto(tx.simulados, W / 2, 64, 16, LARANJA, "center");
+
+  // Eixo horizontal
+  ctx.strokeStyle = CINZA; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x0, yb); ctx.lineTo(x1, yb); ctx.stroke();
+  var i;
+  for (i = 0; i < d.ticks.length; i++) {
+    var x = px(d.ticks[i]);
+    ctx.beginPath(); ctx.moveTo(x, yb); ctx.lineTo(x, yb + 6); ctx.stroke();
+    texto(d.rotulos[i], x, yb + 20, 16, CINZA, "center");
+  }
+  texto(tx.eixo, (x0 + x1) / 2, yb + 48, 18, ESCURO, "center");
+
+  // Media verdadeira
+  ctx.setLineDash([8, 6]); ctx.strokeStyle = ESCURO; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(px(d.mu), yt - 8); ctx.lineTo(px(d.mu), yb); ctx.stroke();
+  ctx.setLineDash([]);
+  texto(tx.media, px(d.mu) + 8, yt - 14, 16, ESCURO, "left");
+
+  // Intervalos: um a um entre aparece_ini e aparece_fim; as cores entram em m.cores
+  var quantos = Math.floor(lim((t - m.aparece_ini) / (m.aparece_fim - m.aparece_ini)) * d.m + 1e-9);
+  if (t >= m.aparece_fim) quantos = d.m;
+  var aCor = fase(m.cores, 1.0);
+  for (i = 0; i < quantos; i++) {
+    var y = py(i);
+    // Antes de m.cores, todos azuis; depois, laranja (e mais grossos) os que nao contem a media.
+    ctx.strokeStyle = (aCor > 0 && !d.contem[i]) ? LARANJA : AZUL;
+    ctx.lineWidth = d.contem[i] ? 4 : 4 + 2 * aCor;
+    ctx.beginPath(); ctx.moveTo(px(d.li[i]), y); ctx.lineTo(px(d.ls[i]), y); ctx.stroke();
+    ctx.fillStyle = ctx.strokeStyle;
+    ctx.beginPath(); ctx.arc(px(d.xb[i]), y, 4, 0, 2 * Math.PI); ctx.fill();
+  }
+  texto(tx.amostra + " 1", x0 - 10, py(0), 14, CINZA, "right");
+  texto(tx.amostra + " " + d.m, x0 - 10, py(d.m - 1), 14, CINZA, "right");
+
+  // Contagem (numero calculado no R)
+  var aCont = fase(m.contagem, 0.8);
+  if (aCont > 0) {
+    ctx.globalAlpha = aCont;
+    texto(tx.contem, x1, yt - 14, 18, AZUL, "right", true);
+    ctx.globalAlpha = 1;
+  }
+});
+</script>
+<div class="anim-aula" id="intervalos">
+<noscript><p>Esta animação precisa de JavaScript. A transcrição da narração está abaixo.</p></noscript>
+<canvas width="2000" height="1040" role="img" aria-label="Animação com dados simulados: 20 intervalos de confiança de 95% para a média, um por amostra de tamanho 25 de uma Normal com média 50, aparecem um a um ao lado de uma linha vertical na média verdadeira; 19 deles contêm a média."></canvas>
+<div class="anim-legenda" id="intervalos-legenda" aria-live="polite"></div>
+<div class="anim-controles" role="group" aria-label="Controles da animação">
+<button type="button" class="anim-iniciar">Iniciar</button>
+<button type="button" class="anim-recomecar">Recomeçar</button>
+<button type="button" class="anim-legenda-btn" aria-pressed="true" aria-controls="intervalos-legenda">Legenda</button>
+<input type="range" class="anim-posicao" min="0" max="43" step="any" value="0" aria-label="Posição na animação">
+<span class="anim-relogio" aria-hidden="true"></span>
+</div>
+<details class="anim-transcricao">
+<summary>Transcrição da narração</summary>
+<p>Vinte amostras de tamanho vinte e cinco foram simuladas de uma população Normal de média cinquenta. Para cada amostra, o R calcula um intervalo de confiança de noventa e cinco por cento para a média. Os segmentos azuis cruzam a linha da média verdadeira; os laranja não a alcançam. Aqui, dezenove dos vinte intervalos contêm a média. A confiança se refere ao procedimento, e não a um intervalo já calculado.</p>
+</details>
+</div>
+<script>AnimacaoAula.criar(document.getElementById("intervalos"), {"cena":"intervalos","duracao":43,"legendas":[{"ini":2,"fim":8.85714285714286,"texto":"Vinte amostras de tamanho vinte e cinco foram simuladas de uma população Normal de média cinquenta.","cena":1},{"ini":9.35714285714286,"fim":17.5,"texto":"Para cada amostra, o R calcula um intervalo de confiança de noventa e cinco por cento para a média.","cena":1},{"ini":24,"fim":30,"texto":"Os segmentos azuis cruzam a linha da média verdadeira; os laranja não a alcançam.","cena":1},{"ini":30.5,"fim":33.9285714285714,"texto":"Aqui, dezenove dos vinte intervalos contêm a média.","cena":1},{"ini":34.4285714285714,"fim":40,"texto":"A confiança se refere ao procedimento, e não a um intervalo já calculado.","cena":1}],"marcas":{"aparece_ini":9.35714285714286,"aparece_fim":23.5,"cores":24,"contagem":30.5},"dados":{"m":20,"mu":50,"xmin":35,"xmax":65,"xb":[52.8774,50.1121,48.7456,46.6161,50.2924,46.7797,47.9332,50.274,51.2199,49.2376,52.9685,50.4191,47.815,52.432,54.9769,49.2174,47.1287,48.1798,46.3883,47.2108],"li":[48.5064,47.1317,45.2366,42.6196,46.3404,42.5946,44.9725,46.2504,48.0492,45.3893,49.4276,48.083,44.4854,48.7759,51.5953,44.6499,42.6059,44.2924,42.6449,43.3508],"ls":[57.2483,53.0925,52.2546,50.6127,54.2444,50.9649,50.894,54.2976,54.3906,53.086,56.5095,52.7552,51.1446,56.0882,58.3586,53.7848,51.6516,52.0673,50.1316,51.0709],"contem":[true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true,true,true,true],"k":19,"ticks":[35,40,45,50,55,60,65],"rotulos":["35","40","45","50","55","60","65"]},"textos":{"titulo":"20 intervalos de confiança de 95% para a média (n = 25)","simulados":"dados simulados: Normal com média 50 e desvio-padrão 10","media":"média verdadeira (50)","eixo":"valor da variável","contem":"contêm a média: 19 de 20","amostra":"amostra"},"rotulos":{"iniciar":"Iniciar","pausar":"Pausar","continuar":"Continuar","recomecar":"Recomeçar","narracao":"Narração","legenda":"Legenda","posicao":"Posição na animação","tempo_de":"de","controles":"Controles da animação","transcricao":"Transcrição da narração","sem_js":"Esta animação precisa de JavaScript. A transcrição da narração está abaixo.","dica":"Antes de iniciar: quantos dos 20 intervalos você espera que contenham a média verdadeira?","descricao":"Animação com dados simulados: 20 intervalos de confiança de 95% para a média, um por amostra de tamanho 25 de uma Normal com média 50, aparecem um a um ao lado de uma linha vertical na média verdadeira; 19 deles contêm a média."},"largura":1000,"altura":520});</script>
+</section>
+<section id="área-sob-a-normal-padrão" class="slide level2">
+<h2>Área sob a Normal padrão</h2>
+<script>
+/* cena_normal.js - area sob a densidade da Normal padrao a esquerda de z
+   (densidades e probabilidades do R, animacao/config_normal.R).
+   Funcao pura do tempo t. Arquivo so com ASCII; todo texto vem de tx. */
+AnimacaoAula.registrar("normal", function (ctx, t, d, m, tx, W, H, estado) {
+  "use strict";
+  var AZUL = "#1d3b53", LARANJA = "#c8553d", CINZA = "#6b6b6b", ESCURO = "#2b2f36",
+      FONTE = "Source Sans Pro, Helvetica, Arial, sans-serif";
+  var x0 = 80, x1 = 920, yt = 110, yb = 430;
+  var zmin = d.z[0], zmax = d.z[d.z.length - 1], dmax = 0.42;
+
+  function lim(u) { return Math.max(0, Math.min(1, u)); }
+  function fase(ini, dur) {
+    if (estado.reduzido) return t >= ini ? 1 : 0;
+    var u = lim((t - ini) / dur);
+    return u * u * (3 - 2 * u);
+  }
+  function texto(s, x, y, tam, cor, alin, negrito) {
+    ctx.font = (negrito ? "bold " : "") + tam + "px " + FONTE;
+    ctx.fillStyle = cor; ctx.textAlign = alin || "left"; ctx.textBaseline = "middle";
+    ctx.fillText(s, x, y);
+  }
+  function px(z) { return x0 + (z - zmin) / (zmax - zmin) * (x1 - x0); }
+  function py(v) { return yb - v / dmax * (yb - yt); }
+
+  texto(tx.titulo, W / 2, 34, 24, ESCURO, "center", true);
+  texto(tx.modelo, W / 2, 66, 17, ESCURO, "center");
+
+  // Posicao de z: parado em z_ini ate anda_ini; anda ate z_fim em anda_fim (linear: e o conteudo).
+  var u = lim((t - m.anda_ini) / (m.anda_fim - m.anda_ini));
+  var zAgora = d.z_ini + (d.z_fim - d.z_ini) * u;
+  var j = Math.round((zAgora - zmin) / (zmax - zmin) * (d.z.length - 1));
+
+  // Area sombreada (aparece em m.area)
+  var aArea = fase(m.area, 1.0);
+  var i;
+  if (aArea > 0) {
+    ctx.globalAlpha = 0.35 * aArea; ctx.fillStyle = LARANJA;
+    ctx.beginPath(); ctx.moveTo(px(d.z[0]), yb);
+    for (i = 0; i <= j; i++) ctx.lineTo(px(d.z[i]), py(d.dens[i]));
+    ctx.lineTo(px(d.z[j]), yb); ctx.closePath(); ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+
+  // Curva e eixo
+  ctx.strokeStyle = AZUL; ctx.lineWidth = 3;
+  ctx.beginPath();
+  for (i = 0; i < d.z.length; i++) {
+    if (i === 0) ctx.moveTo(px(d.z[i]), py(d.dens[i])); else ctx.lineTo(px(d.z[i]), py(d.dens[i]));
+  }
+  ctx.stroke();
+  ctx.strokeStyle = CINZA; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x0, yb); ctx.lineTo(x1, yb); ctx.stroke();
+  for (i = 0; i < d.ticks.length; i++) {
+    ctx.beginPath(); ctx.moveTo(px(d.ticks[i]), yb); ctx.lineTo(px(d.ticks[i]), yb + 6); ctx.stroke();
+    texto(d.rotulos[i], px(d.ticks[i]), yb + 20, 16, CINZA, "center");
+  }
+  texto(tx.eixo, x1, yb + 46, 18, ESCURO, "right");
+
+  // Ponto z e probabilidade (texto e numeros do R)
+  if (aArea > 0) {
+    ctx.globalAlpha = aArea;
+    ctx.strokeStyle = LARANJA; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(px(d.z[j]), yb); ctx.lineTo(px(d.z[j]), py(d.dens[j])); ctx.stroke();
+    texto(tx.eixo + " = " + d.z_txt[j], px(d.z[j]), yb + 46, 18, LARANJA, "center", true);
+    texto(tx.prob + d.z_txt[j] + tx.igual + d.p_txt[j], x0 + 10, yt, 22, LARANJA, "left", true);
+    ctx.globalAlpha = 1;
+  }
+});
+</script>
+<div class="anim-aula" id="normal">
+<noscript><p>Esta animação precisa de JavaScript. A transcrição da narração está abaixo.</p></noscript>
+<canvas width="2000" height="1040" role="img" aria-label="Animação: densidade da Normal padrão com a área à esquerda de um ponto z sombreada; o ponto anda para a direita e a área cresce; em z = 1,96, a área é 0,9750."></canvas>
+<div class="anim-legenda" id="normal-legenda" aria-live="polite"></div>
+<div class="anim-controles" role="group" aria-label="Controles da animação">
+<button type="button" class="anim-iniciar">Iniciar</button>
+<button type="button" class="anim-recomecar">Recomeçar</button>
+<button type="button" class="anim-legenda-btn" aria-pressed="true" aria-controls="normal-legenda">Legenda</button>
+<input type="range" class="anim-posicao" min="0" max="37.78571" step="any" value="0" aria-label="Posição na animação">
+<span class="anim-relogio" aria-hidden="true"></span>
+</div>
+<details class="anim-transcricao">
+<summary>Transcrição da narração</summary>
+<p>A curva é a densidade da Normal padrão, de média zero e variância um. A área sombreada, à esquerda do ponto z, é a probabilidade de Z ser menor ou igual a z. Quando z anda para a direita, a área cresce e se aproxima de um. Em z igual a um vírgula noventa e seis, a área é zero vírgula novecentos e setenta e cinco.</p>
+</details>
+</div>
+<script>AnimacaoAula.criar(document.getElementById("normal"), {"cena":"normal","duracao":37.7857142857143,"legendas":[{"ini":2,"fim":8,"texto":"A curva é a densidade da Normal padrão, de média zero e variância um.","cena":1},{"ini":8.5,"fim":16.6428571428571,"texto":"A área sombreada, à esquerda do ponto z, é a probabilidade de Z ser menor ou igual a z.","cena":1},{"ini":17.1428571428571,"fim":23.1428571428571,"texto":"Quando z anda para a direita, a área cresce e se aproxima de um.","cena":1},{"ini":26.6428571428571,"fim":34.7857142857143,"texto":"Em z igual a um vírgula noventa e seis, a área é zero vírgula novecentos e setenta e cinco.","cena":1}],"marcas":{"area":8.5,"anda_ini":17.1428571428571,"anda_fim":26.6428571428571},"dados":{"z":[-3.5,-3.49,-3.48,-3.47,-3.46,-3.45,-3.44,-3.43,-3.42,-3.41,-3.4,-3.39,-3.38,-3.37,-3.36,-3.35,-3.34,-3.33,-3.32,-3.31,-3.3,-3.29,-3.28,-3.27,-3.26,-3.25,-3.24,-3.23,-3.22,-3.21,-3.2,-3.19,-3.18,-3.17,-3.16,-3.15,-3.14,-3.13,-3.12,-3.11,-3.1,-3.09,-3.08,-3.07,-3.06,-3.05,-3.04,-3.03,-3.02,-3.01,-3,-2.99,-2.98,-2.97,-2.96,-2.95,-2.94,-2.93,-2.92,-2.91,-2.9,-2.89,-2.88,-2.87,-2.86,-2.85,-2.84,-2.83,-2.82,-2.81,-2.8,-2.79,-2.78,-2.77,-2.76,-2.75,-2.74,-2.73,-2.72,-2.71,-2.7,-2.69,-2.68,-2.67,-2.66,-2.65,-2.64,-2.63,-2.62,-2.61,-2.6,-2.59,-2.58,-2.57,-2.56,-2.55,-2.54,-2.53,-2.52,-2.51,-2.5,-2.49,-2.48,-2.47,-2.46,-2.45,-2.44,-2.43,-2.42,-2.41,-2.4,-2.39,-2.38,-2.37,-2.36,-2.35,-2.34,-2.33,-2.32,-2.31,-2.3,-2.29,-2.28,-2.27,-2.26,-2.25,-2.24,-2.23,-2.22,-2.21,-2.2,-2.19,-2.18,-2.17,-2.16,-2.15,-2.14,-2.13,-2.12,-2.11,-2.1,-2.09,-2.08,-2.07,-2.06,-2.05,-2.04,-2.03,-2.02,-2.01,-2,-1.99,-1.98,-1.97,-1.96,-1.95,-1.94,-1.93,-1.92,-1.91,-1.9,-1.89,-1.88,-1.87,-1.86,-1.85,-1.84,-1.83,-1.82,-1.81,-1.8,-1.79,-1.78,-1.77,-1.76,-1.75,-1.74,-1.73,-1.72,-1.71,-1.7,-1.69,-1.68,-1.67,-1.66,-1.65,-1.64,-1.63,-1.62,-1.61,-1.6,-1.59,-1.58,-1.57,-1.56,-1.55,-1.54,-1.53,-1.52,-1.51,-1.5,-1.49,-1.48,-1.47,-1.46,-1.45,-1.44,-1.43,-1.42,-1.41,-1.4,-1.39,-1.38,-1.37,-1.36,-1.35,-1.34,-1.33,-1.32,-1.31,-1.3,-1.29,-1.28,-1.27,-1.26,-1.25,-1.24,-1.23,-1.22,-1.21,-1.2,-1.19,-1.18,-1.17,-1.16,-1.15,-1.14,-1.13,-1.12,-1.11,-1.1,-1.09,-1.08,-1.07,-1.06,-1.05,-1.04,-1.03,-1.02,-1.01,-1,-0.99,-0.98,-0.97,-0.96,-0.95,-0.94,-0.93,-0.92,-0.91,-0.9,-0.89,-0.88,-0.87,-0.86,-0.85,-0.84,-0.83,-0.82,-0.81,-0.8,-0.79,-0.78,-0.77,-0.76,-0.75,-0.74,-0.73,-0.72,-0.71,-0.7,-0.69,-0.68,-0.67,-0.66,-0.65,-0.64,-0.63,-0.62,-0.61,-0.6,-0.59,-0.58,-0.57,-0.56,-0.55,-0.54,-0.53,-0.52,-0.51,-0.5,-0.49,-0.48,-0.47,-0.46,-0.45,-0.44,-0.43,-0.42,-0.41,-0.4,-0.39,-0.38,-0.37,-0.36,-0.35,-0.34,-0.33,-0.32,-0.31,-0.3,-0.29,-0.28,-0.27,-0.26,-0.25,-0.24,-0.23,-0.22,-0.21,-0.2,-0.19,-0.18,-0.17,-0.16,-0.15,-0.14,-0.13,-0.12,-0.11,-0.1,-0.09,-0.08,-0.07,-0.06,-0.05,-0.04,-0.03,-0.02,-0.01,0,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19,0.2,0.21,0.22,0.23,0.24,0.25,0.26,0.27,0.28,0.29,0.3,0.31,0.32,0.33,0.34,0.35,0.36,0.37,0.38,0.39,0.4,0.41,0.42,0.43,0.44,0.45,0.46,0.47,0.48,0.49,0.5,0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.6,0.61,0.62,0.63,0.64,0.65,0.66,0.67,0.68,0.69,0.7,0.71,0.72,0.73,0.74,0.75,0.76,0.77,0.78,0.79,0.8,0.81,0.82,0.83,0.84,0.85,0.86,0.87,0.88,0.89,0.9,0.91,0.92,0.93,0.94,0.95,0.96,0.97,0.98,0.99,1,1.01,1.02,1.03,1.04,1.05,1.06,1.07,1.08,1.09,1.1,1.11,1.12,1.13,1.14,1.15,1.16,1.17,1.18,1.19,1.2,1.21,1.22,1.23,1.24,1.25,1.26,1.27,1.28,1.29,1.3,1.31,1.32,1.33,1.34,1.35,1.36,1.37,1.38,1.39,1.4,1.41,1.42,1.43,1.44,1.45,1.46,1.47,1.48,1.49,1.5,1.51,1.52,1.53,1.54,1.55,1.56,1.57,1.58,1.59,1.6,1.61,1.62,1.63,1.64,1.65,1.66,1.67,1.68,1.69,1.7,1.71,1.72,1.73,1.74,1.75,1.76,1.77,1.78,1.79,1.8,1.81,1.82,1.83,1.84,1.85,1.86,1.87,1.88,1.89,1.9,1.91,1.92,1.93,1.94,1.95,1.96,1.97,1.98,1.99,2,2.01,2.02,2.03,2.04,2.05,2.06,2.07,2.08,2.09,2.1,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.2,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.3,2.31,2.32,2.33,2.34,2.35,2.36,2.37,2.38,2.39,2.4,2.41,2.42,2.43,2.44,2.45,2.46,2.47,2.48,2.49,2.5,2.51,2.52,2.53,2.54,2.55,2.56,2.57,2.58,2.59,2.6,2.61,2.62,2.63,2.64,2.65,2.66,2.67,2.68,2.69,2.7,2.71,2.72,2.73,2.74,2.75,2.76,2.77,2.78,2.79,2.8,2.81,2.82,2.83,2.84,2.85,2.86,2.87,2.88,2.89,2.9,2.91,2.92,2.93,2.94,2.95,2.96,2.97,2.98,2.99,3,3.01,3.02,3.03,3.04,3.05,3.06,3.07,3.08,3.09,3.1,3.11,3.12,3.13,3.14,3.15,3.16,3.17,3.18,3.19,3.2,3.21,3.22,3.23,3.24,3.25,3.26,3.27,3.28,3.29,3.3,3.31,3.32,3.33,3.34,3.35,3.36,3.37,3.38,3.39,3.4,3.41,3.42,3.43,3.44,3.45,3.46,3.47,3.48,3.49,3.5],"dens":[0.00087,0.0009,0.00094,0.00097,0.001,0.00104,0.00107,0.00111,0.00115,0.00119,0.00123,0.00127,0.00132,0.00136,0.00141,0.00146,0.00151,0.00156,0.00161,0.00167,0.00172,0.00178,0.00184,0.0019,0.00196,0.00203,0.0021,0.00216,0.00224,0.00231,0.00238,0.00246,0.00254,0.00262,0.00271,0.00279,0.00288,0.00298,0.00307,0.00317,0.00327,0.00337,0.00348,0.00358,0.0037,0.00381,0.00393,0.00405,0.00417,0.0043,0.00443,0.00457,0.0047,0.00485,0.00499,0.00514,0.0053,0.00545,0.00562,0.00578,0.00595,0.00613,0.00631,0.00649,0.00668,0.00687,0.00707,0.00727,0.00748,0.0077,0.00792,0.00814,0.00837,0.00861,0.00885,0.00909,0.00935,0.00961,0.00987,0.01014,0.01042,0.01071,0.011,0.0113,0.0116,0.01191,0.01223,0.01256,0.01289,0.01323,0.01358,0.01394,0.01431,0.01468,0.01506,0.01545,0.01585,0.01625,0.01667,0.01709,0.01753,0.01797,0.01842,0.01888,0.01936,0.01984,0.02033,0.02083,0.02134,0.02186,0.02239,0.02294,0.02349,0.02406,0.02463,0.02522,0.02582,0.02643,0.02705,0.02768,0.02833,0.02898,0.02965,0.03034,0.03103,0.03174,0.03246,0.03319,0.03394,0.0347,0.03547,0.03626,0.03706,0.03788,0.03871,0.03955,0.04041,0.04128,0.04217,0.04307,0.04398,0.04491,0.04586,0.04682,0.0478,0.04879,0.0498,0.05082,0.05186,0.05292,0.05399,0.05508,0.05618,0.0573,0.05844,0.05959,0.06077,0.06195,0.06316,0.06438,0.06562,0.06687,0.06814,0.06943,0.07074,0.07206,0.07341,0.07477,0.07614,0.07754,0.07895,0.08038,0.08183,0.08329,0.08478,0.08628,0.0878,0.08933,0.09089,0.09246,0.09405,0.09566,0.09728,0.09893,0.10059,0.10226,0.10396,0.10567,0.10741,0.10915,0.11092,0.1127,0.1145,0.11632,0.11816,0.12001,0.12188,0.12376,0.12566,0.12758,0.12952,0.13147,0.13344,0.13542,0.13742,0.13943,0.14146,0.1435,0.14556,0.14764,0.14973,0.15183,0.15395,0.15608,0.15822,0.16038,0.16256,0.16474,0.16694,0.16915,0.17137,0.1736,0.17585,0.1781,0.18037,0.18265,0.18494,0.18724,0.18954,0.19186,0.19419,0.19652,0.19886,0.20121,0.20357,0.20594,0.20831,0.21069,0.21307,0.21546,0.21785,0.22025,0.22265,0.22506,0.22747,0.22988,0.2323,0.23471,0.23713,0.23955,0.24197,0.24439,0.24681,0.24923,0.25164,0.25406,0.25647,0.25888,0.26129,0.26369,0.26609,0.26848,0.27086,0.27324,0.27562,0.27798,0.28034,0.28269,0.28504,0.28737,0.28969,0.292,0.29431,0.29659,0.29887,0.30114,0.30339,0.30563,0.30785,0.31006,0.31225,0.31443,0.31659,0.31874,0.32086,0.32297,0.32506,0.32713,0.32918,0.33121,0.33322,0.33521,0.33718,0.33912,0.34105,0.34294,0.34482,0.34667,0.34849,0.35029,0.35207,0.35381,0.35553,0.35723,0.35889,0.36053,0.36213,0.36371,0.36526,0.36678,0.36827,0.36973,0.37115,0.37255,0.37391,0.37524,0.37654,0.3778,0.37903,0.38023,0.38139,0.38251,0.38361,0.38466,0.38568,0.38667,0.38762,0.38853,0.3894,0.39024,0.39104,0.39181,0.39253,0.39322,0.39387,0.39448,0.39505,0.39559,0.39608,0.39654,0.39695,0.39733,0.39767,0.39797,0.39822,0.39844,0.39862,0.39876,0.39886,0.39892,0.39894,0.39892,0.39886,0.39876,0.39862,0.39844,0.39822,0.39797,0.39767,0.39733,0.39695,0.39654,0.39608,0.39559,0.39505,0.39448,0.39387,0.39322,0.39253,0.39181,0.39104,0.39024,0.3894,0.38853,0.38762,0.38667,0.38568,0.38466,0.38361,0.38251,0.38139,0.38023,0.37903,0.3778,0.37654,0.37524,0.37391,0.37255,0.37115,0.36973,0.36827,0.36678,0.36526,0.36371,0.36213,0.36053,0.35889,0.35723,0.35553,0.35381,0.35207,0.35029,0.34849,0.34667,0.34482,0.34294,0.34105,0.33912,0.33718,0.33521,0.33322,0.33121,0.32918,0.32713,0.32506,0.32297,0.32086,0.31874,0.31659,0.31443,0.31225,0.31006,0.30785,0.30563,0.30339,0.30114,0.29887,0.29659,0.29431,0.292,0.28969,0.28737,0.28504,0.28269,0.28034,0.27798,0.27562,0.27324,0.27086,0.26848,0.26609,0.26369,0.26129,0.25888,0.25647,0.25406,0.25164,0.24923,0.24681,0.24439,0.24197,0.23955,0.23713,0.23471,0.2323,0.22988,0.22747,0.22506,0.22265,0.22025,0.21785,0.21546,0.21307,0.21069,0.20831,0.20594,0.20357,0.20121,0.19886,0.19652,0.19419,0.19186,0.18954,0.18724,0.18494,0.18265,0.18037,0.1781,0.17585,0.1736,0.17137,0.16915,0.16694,0.16474,0.16256,0.16038,0.15822,0.15608,0.15395,0.15183,0.14973,0.14764,0.14556,0.1435,0.14146,0.13943,0.13742,0.13542,0.13344,0.13147,0.12952,0.12758,0.12566,0.12376,0.12188,0.12001,0.11816,0.11632,0.1145,0.1127,0.11092,0.10915,0.10741,0.10567,0.10396,0.10226,0.10059,0.09893,0.09728,0.09566,0.09405,0.09246,0.09089,0.08933,0.0878,0.08628,0.08478,0.08329,0.08183,0.08038,0.07895,0.07754,0.07614,0.07477,0.07341,0.07206,0.07074,0.06943,0.06814,0.06687,0.06562,0.06438,0.06316,0.06195,0.06077,0.05959,0.05844,0.0573,0.05618,0.05508,0.05399,0.05292,0.05186,0.05082,0.0498,0.04879,0.0478,0.04682,0.04586,0.04491,0.04398,0.04307,0.04217,0.04128,0.04041,0.03955,0.03871,0.03788,0.03706,0.03626,0.03547,0.0347,0.03394,0.03319,0.03246,0.03174,0.03103,0.03034,0.02965,0.02898,0.02833,0.02768,0.02705,0.02643,0.02582,0.02522,0.02463,0.02406,0.02349,0.02294,0.02239,0.02186,0.02134,0.02083,0.02033,0.01984,0.01936,0.01888,0.01842,0.01797,0.01753,0.01709,0.01667,0.01625,0.01585,0.01545,0.01506,0.01468,0.01431,0.01394,0.01358,0.01323,0.01289,0.01256,0.01223,0.01191,0.0116,0.0113,0.011,0.01071,0.01042,0.01014,0.00987,0.00961,0.00935,0.00909,0.00885,0.00861,0.00837,0.00814,0.00792,0.0077,0.00748,0.00727,0.00707,0.00687,0.00668,0.00649,0.00631,0.00613,0.00595,0.00578,0.00562,0.00545,0.0053,0.00514,0.00499,0.00485,0.0047,0.00457,0.00443,0.0043,0.00417,0.00405,0.00393,0.00381,0.0037,0.00358,0.00348,0.00337,0.00327,0.00317,0.00307,0.00298,0.00288,0.00279,0.00271,0.00262,0.00254,0.00246,0.00238,0.00231,0.00224,0.00216,0.0021,0.00203,0.00196,0.0019,0.00184,0.00178,0.00172,0.00167,0.00161,0.00156,0.00151,0.00146,0.00141,0.00136,0.00132,0.00127,0.00123,0.00119,0.00115,0.00111,0.00107,0.00104,0.001,0.00097,0.00094,0.0009,0.00087],"p_txt":["0,0002","0,0002","0,0003","0,0003","0,0003","0,0003","0,0003","0,0003","0,0003","0,0003","0,0003","0,0003","0,0004","0,0004","0,0004","0,0004","0,0004","0,0004","0,0005","0,0005","0,0005","0,0005","0,0005","0,0005","0,0006","0,0006","0,0006","0,0006","0,0006","0,0007","0,0007","0,0007","0,0007","0,0008","0,0008","0,0008","0,0008","0,0009","0,0009","0,0009","0,0010","0,0010","0,0010","0,0011","0,0011","0,0011","0,0012","0,0012","0,0013","0,0013","0,0013","0,0014","0,0014","0,0015","0,0015","0,0016","0,0016","0,0017","0,0018","0,0018","0,0019","0,0019","0,0020","0,0021","0,0021","0,0022","0,0023","0,0023","0,0024","0,0025","0,0026","0,0026","0,0027","0,0028","0,0029","0,0030","0,0031","0,0032","0,0033","0,0034","0,0035","0,0036","0,0037","0,0038","0,0039","0,0040","0,0041","0,0043","0,0044","0,0045","0,0047","0,0048","0,0049","0,0051","0,0052","0,0054","0,0055","0,0057","0,0059","0,0060","0,0062","0,0064","0,0066","0,0068","0,0069","0,0071","0,0073","0,0075","0,0078","0,0080","0,0082","0,0084","0,0087","0,0089","0,0091","0,0094","0,0096","0,0099","0,0102","0,0104","0,0107","0,0110","0,0113","0,0116","0,0119","0,0122","0,0125","0,0129","0,0132","0,0136","0,0139","0,0143","0,0146","0,0150","0,0154","0,0158","0,0162","0,0166","0,0170","0,0174","0,0179","0,0183","0,0188","0,0192","0,0197","0,0202","0,0207","0,0212","0,0217","0,0222","0,0228","0,0233","0,0239","0,0244","0,0250","0,0256","0,0262","0,0268","0,0274","0,0281","0,0287","0,0294","0,0301","0,0307","0,0314","0,0322","0,0329","0,0336","0,0344","0,0351","0,0359","0,0367","0,0375","0,0384","0,0392","0,0401","0,0409","0,0418","0,0427","0,0436","0,0446","0,0455","0,0465","0,0475","0,0485","0,0495","0,0505","0,0516","0,0526","0,0537","0,0548","0,0559","0,0571","0,0582","0,0594","0,0606","0,0618","0,0630","0,0643","0,0655","0,0668","0,0681","0,0694","0,0708","0,0721","0,0735","0,0749","0,0764","0,0778","0,0793","0,0808","0,0823","0,0838","0,0853","0,0869","0,0885","0,0901","0,0918","0,0934","0,0951","0,0968","0,0985","0,1003","0,1020","0,1038","0,1056","0,1075","0,1093","0,1112","0,1131","0,1151","0,1170","0,1190","0,1210","0,1230","0,1251","0,1271","0,1292","0,1314","0,1335","0,1357","0,1379","0,1401","0,1423","0,1446","0,1469","0,1492","0,1515","0,1539","0,1562","0,1587","0,1611","0,1635","0,1660","0,1685","0,1711","0,1736","0,1762","0,1788","0,1814","0,1841","0,1867","0,1894","0,1922","0,1949","0,1977","0,2005","0,2033","0,2061","0,2090","0,2119","0,2148","0,2177","0,2206","0,2236","0,2266","0,2296","0,2327","0,2358","0,2389","0,2420","0,2451","0,2483","0,2514","0,2546","0,2578","0,2611","0,2643","0,2676","0,2709","0,2743","0,2776","0,2810","0,2843","0,2877","0,2912","0,2946","0,2981","0,3015","0,3050","0,3085","0,3121","0,3156","0,3192","0,3228","0,3264","0,3300","0,3336","0,3372","0,3409","0,3446","0,3483","0,3520","0,3557","0,3594","0,3632","0,3669","0,3707","0,3745","0,3783","0,3821","0,3859","0,3897","0,3936","0,3974","0,4013","0,4052","0,4090","0,4129","0,4168","0,4207","0,4247","0,4286","0,4325","0,4364","0,4404","0,4443","0,4483","0,4522","0,4562","0,4602","0,4641","0,4681","0,4721","0,4761","0,4801","0,4840","0,4880","0,4920","0,4960","0,5000","0,5040","0,5080","0,5120","0,5160","0,5199","0,5239","0,5279","0,5319","0,5359","0,5398","0,5438","0,5478","0,5517","0,5557","0,5596","0,5636","0,5675","0,5714","0,5753","0,5793","0,5832","0,5871","0,5910","0,5948","0,5987","0,6026","0,6064","0,6103","0,6141","0,6179","0,6217","0,6255","0,6293","0,6331","0,6368","0,6406","0,6443","0,6480","0,6517","0,6554","0,6591","0,6628","0,6664","0,6700","0,6736","0,6772","0,6808","0,6844","0,6879","0,6915","0,6950","0,6985","0,7019","0,7054","0,7088","0,7123","0,7157","0,7190","0,7224","0,7257","0,7291","0,7324","0,7357","0,7389","0,7422","0,7454","0,7486","0,7517","0,7549","0,7580","0,7611","0,7642","0,7673","0,7704","0,7734","0,7764","0,7794","0,7823","0,7852","0,7881","0,7910","0,7939","0,7967","0,7995","0,8023","0,8051","0,8078","0,8106","0,8133","0,8159","0,8186","0,8212","0,8238","0,8264","0,8289","0,8315","0,8340","0,8365","0,8389","0,8413","0,8438","0,8461","0,8485","0,8508","0,8531","0,8554","0,8577","0,8599","0,8621","0,8643","0,8665","0,8686","0,8708","0,8729","0,8749","0,8770","0,8790","0,8810","0,8830","0,8849","0,8869","0,8888","0,8907","0,8925","0,8944","0,8962","0,8980","0,8997","0,9015","0,9032","0,9049","0,9066","0,9082","0,9099","0,9115","0,9131","0,9147","0,9162","0,9177","0,9192","0,9207","0,9222","0,9236","0,9251","0,9265","0,9279","0,9292","0,9306","0,9319","0,9332","0,9345","0,9357","0,9370","0,9382","0,9394","0,9406","0,9418","0,9429","0,9441","0,9452","0,9463","0,9474","0,9484","0,9495","0,9505","0,9515","0,9525","0,9535","0,9545","0,9554","0,9564","0,9573","0,9582","0,9591","0,9599","0,9608","0,9616","0,9625","0,9633","0,9641","0,9649","0,9656","0,9664","0,9671","0,9678","0,9686","0,9693","0,9699","0,9706","0,9713","0,9719","0,9726","0,9732","0,9738","0,9744","0,9750","0,9756","0,9761","0,9767","0,9772","0,9778","0,9783","0,9788","0,9793","0,9798","0,9803","0,9808","0,9812","0,9817","0,9821","0,9826","0,9830","0,9834","0,9838","0,9842","0,9846","0,9850","0,9854","0,9857","0,9861","0,9864","0,9868","0,9871","0,9875","0,9878","0,9881","0,9884","0,9887","0,9890","0,9893","0,9896","0,9898","0,9901","0,9904","0,9906","0,9909","0,9911","0,9913","0,9916","0,9918","0,9920","0,9922","0,9925","0,9927","0,9929","0,9931","0,9932","0,9934","0,9936","0,9938","0,9940","0,9941","0,9943","0,9945","0,9946","0,9948","0,9949","0,9951","0,9952","0,9953","0,9955","0,9956","0,9957","0,9959","0,9960","0,9961","0,9962","0,9963","0,9964","0,9965","0,9966","0,9967","0,9968","0,9969","0,9970","0,9971","0,9972","0,9973","0,9974","0,9974","0,9975","0,9976","0,9977","0,9977","0,9978","0,9979","0,9979","0,9980","0,9981","0,9981","0,9982","0,9982","0,9983","0,9984","0,9984","0,9985","0,9985","0,9986","0,9986","0,9987","0,9987","0,9987","0,9988","0,9988","0,9989","0,9989","0,9989","0,9990","0,9990","0,9990","0,9991","0,9991","0,9991","0,9992","0,9992","0,9992","0,9992","0,9993","0,9993","0,9993","0,9993","0,9994","0,9994","0,9994","0,9994","0,9994","0,9995","0,9995","0,9995","0,9995","0,9995","0,9995","0,9996","0,9996","0,9996","0,9996","0,9996","0,9996","0,9997","0,9997","0,9997","0,9997","0,9997","0,9997","0,9997","0,9997","0,9997","0,9997","0,9998","0,9998"],"z_txt":["−3,50","−3,49","−3,48","−3,47","−3,46","−3,45","−3,44","−3,43","−3,42","−3,41","−3,40","−3,39","−3,38","−3,37","−3,36","−3,35","−3,34","−3,33","−3,32","−3,31","−3,30","−3,29","−3,28","−3,27","−3,26","−3,25","−3,24","−3,23","−3,22","−3,21","−3,20","−3,19","−3,18","−3,17","−3,16","−3,15","−3,14","−3,13","−3,12","−3,11","−3,10","−3,09","−3,08","−3,07","−3,06","−3,05","−3,04","−3,03","−3,02","−3,01","−3,00","−2,99","−2,98","−2,97","−2,96","−2,95","−2,94","−2,93","−2,92","−2,91","−2,90","−2,89","−2,88","−2,87","−2,86","−2,85","−2,84","−2,83","−2,82","−2,81","−2,80","−2,79","−2,78","−2,77","−2,76","−2,75","−2,74","−2,73","−2,72","−2,71","−2,70","−2,69","−2,68","−2,67","−2,66","−2,65","−2,64","−2,63","−2,62","−2,61","−2,60","−2,59","−2,58","−2,57","−2,56","−2,55","−2,54","−2,53","−2,52","−2,51","−2,50","−2,49","−2,48","−2,47","−2,46","−2,45","−2,44","−2,43","−2,42","−2,41","−2,40","−2,39","−2,38","−2,37","−2,36","−2,35","−2,34","−2,33","−2,32","−2,31","−2,30","−2,29","−2,28","−2,27","−2,26","−2,25","−2,24","−2,23","−2,22","−2,21","−2,20","−2,19","−2,18","−2,17","−2,16","−2,15","−2,14","−2,13","−2,12","−2,11","−2,10","−2,09","−2,08","−2,07","−2,06","−2,05","−2,04","−2,03","−2,02","−2,01","−2,00","−1,99","−1,98","−1,97","−1,96","−1,95","−1,94","−1,93","−1,92","−1,91","−1,90","−1,89","−1,88","−1,87","−1,86","−1,85","−1,84","−1,83","−1,82","−1,81","−1,80","−1,79","−1,78","−1,77","−1,76","−1,75","−1,74","−1,73","−1,72","−1,71","−1,70","−1,69","−1,68","−1,67","−1,66","−1,65","−1,64","−1,63","−1,62","−1,61","−1,60","−1,59","−1,58","−1,57","−1,56","−1,55","−1,54","−1,53","−1,52","−1,51","−1,50","−1,49","−1,48","−1,47","−1,46","−1,45","−1,44","−1,43","−1,42","−1,41","−1,40","−1,39","−1,38","−1,37","−1,36","−1,35","−1,34","−1,33","−1,32","−1,31","−1,30","−1,29","−1,28","−1,27","−1,26","−1,25","−1,24","−1,23","−1,22","−1,21","−1,20","−1,19","−1,18","−1,17","−1,16","−1,15","−1,14","−1,13","−1,12","−1,11","−1,10","−1,09","−1,08","−1,07","−1,06","−1,05","−1,04","−1,03","−1,02","−1,01","−1,00","−0,99","−0,98","−0,97","−0,96","−0,95","−0,94","−0,93","−0,92","−0,91","−0,90","−0,89","−0,88","−0,87","−0,86","−0,85","−0,84","−0,83","−0,82","−0,81","−0,80","−0,79","−0,78","−0,77","−0,76","−0,75","−0,74","−0,73","−0,72","−0,71","−0,70","−0,69","−0,68","−0,67","−0,66","−0,65","−0,64","−0,63","−0,62","−0,61","−0,60","−0,59","−0,58","−0,57","−0,56","−0,55","−0,54","−0,53","−0,52","−0,51","−0,50","−0,49","−0,48","−0,47","−0,46","−0,45","−0,44","−0,43","−0,42","−0,41","−0,40","−0,39","−0,38","−0,37","−0,36","−0,35","−0,34","−0,33","−0,32","−0,31","−0,30","−0,29","−0,28","−0,27","−0,26","−0,25","−0,24","−0,23","−0,22","−0,21","−0,20","−0,19","−0,18","−0,17","−0,16","−0,15","−0,14","−0,13","−0,12","−0,11","−0,10","−0,09","−0,08","−0,07","−0,06","−0,05","−0,04","−0,03","−0,02","−0,01","0,00","0,01","0,02","0,03","0,04","0,05","0,06","0,07","0,08","0,09","0,10","0,11","0,12","0,13","0,14","0,15","0,16","0,17","0,18","0,19","0,20","0,21","0,22","0,23","0,24","0,25","0,26","0,27","0,28","0,29","0,30","0,31","0,32","0,33","0,34","0,35","0,36","0,37","0,38","0,39","0,40","0,41","0,42","0,43","0,44","0,45","0,46","0,47","0,48","0,49","0,50","0,51","0,52","0,53","0,54","0,55","0,56","0,57","0,58","0,59","0,60","0,61","0,62","0,63","0,64","0,65","0,66","0,67","0,68","0,69","0,70","0,71","0,72","0,73","0,74","0,75","0,76","0,77","0,78","0,79","0,80","0,81","0,82","0,83","0,84","0,85","0,86","0,87","0,88","0,89","0,90","0,91","0,92","0,93","0,94","0,95","0,96","0,97","0,98","0,99","1,00","1,01","1,02","1,03","1,04","1,05","1,06","1,07","1,08","1,09","1,10","1,11","1,12","1,13","1,14","1,15","1,16","1,17","1,18","1,19","1,20","1,21","1,22","1,23","1,24","1,25","1,26","1,27","1,28","1,29","1,30","1,31","1,32","1,33","1,34","1,35","1,36","1,37","1,38","1,39","1,40","1,41","1,42","1,43","1,44","1,45","1,46","1,47","1,48","1,49","1,50","1,51","1,52","1,53","1,54","1,55","1,56","1,57","1,58","1,59","1,60","1,61","1,62","1,63","1,64","1,65","1,66","1,67","1,68","1,69","1,70","1,71","1,72","1,73","1,74","1,75","1,76","1,77","1,78","1,79","1,80","1,81","1,82","1,83","1,84","1,85","1,86","1,87","1,88","1,89","1,90","1,91","1,92","1,93","1,94","1,95","1,96","1,97","1,98","1,99","2,00","2,01","2,02","2,03","2,04","2,05","2,06","2,07","2,08","2,09","2,10","2,11","2,12","2,13","2,14","2,15","2,16","2,17","2,18","2,19","2,20","2,21","2,22","2,23","2,24","2,25","2,26","2,27","2,28","2,29","2,30","2,31","2,32","2,33","2,34","2,35","2,36","2,37","2,38","2,39","2,40","2,41","2,42","2,43","2,44","2,45","2,46","2,47","2,48","2,49","2,50","2,51","2,52","2,53","2,54","2,55","2,56","2,57","2,58","2,59","2,60","2,61","2,62","2,63","2,64","2,65","2,66","2,67","2,68","2,69","2,70","2,71","2,72","2,73","2,74","2,75","2,76","2,77","2,78","2,79","2,80","2,81","2,82","2,83","2,84","2,85","2,86","2,87","2,88","2,89","2,90","2,91","2,92","2,93","2,94","2,95","2,96","2,97","2,98","2,99","3,00","3,01","3,02","3,03","3,04","3,05","3,06","3,07","3,08","3,09","3,10","3,11","3,12","3,13","3,14","3,15","3,16","3,17","3,18","3,19","3,20","3,21","3,22","3,23","3,24","3,25","3,26","3,27","3,28","3,29","3,30","3,31","3,32","3,33","3,34","3,35","3,36","3,37","3,38","3,39","3,40","3,41","3,42","3,43","3,44","3,45","3,46","3,47","3,48","3,49","3,50"],"z_ini":-1,"z_fim":1.96,"ticks":[-3,-2,-1,0,1,2,3],"rotulos":["−3","−2","−1","0","1","2","3"]},"textos":{"titulo":"Probabilidade como área sob a densidade da Normal padrão","modelo":"Z ~ Normal(0; 1): média 0, variância 1, suporte (−∞; ∞)","eixo":"z","prob":"P(Z ≤ ","igual":") = "},"rotulos":{"iniciar":"Iniciar","pausar":"Pausar","continuar":"Continuar","recomecar":"Recomeçar","narracao":"Narração","legenda":"Legenda","posicao":"Posição na animação","tempo_de":"de","controles":"Controles da animação","transcricao":"Transcrição da narração","sem_js":"Esta animação precisa de JavaScript. A transcrição da narração está abaixo.","dica":"Antes de iniciar: qual é a área total sob a curva?","descricao":"Animação: densidade da Normal padrão com a área à esquerda de um ponto z sombreada; o ponto anda para a direita e a área cresce; em z = 1,96, a área é 0,9750."},"largura":1000,"altura":520});</script>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiada");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiada");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+              if (!link.classList.contains('no-external-icon')) {
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
