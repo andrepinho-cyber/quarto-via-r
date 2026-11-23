@@ -1,0 +1,43 @@
+/* animacao.css - aparencia do tocador das animacoes narradas (licenca MIT).
+   Arquivo so com ASCII. */
+.anim-aula { width: 80%; margin: 0 auto; }
+.anim-aula canvas {
+  display: block; width: 100%; height: auto; aspect-ratio: 1000 / 520;
+  border: 1px solid #d9dde3; border-radius: 6px; background: #ffffff;
+}
+.anim-aula .anim-legenda {
+  min-height: 2.6em; margin: 0.25em 0 0.2em; padding: 0.15em 0.4em;
+  font-size: 0.62em; line-height: 1.3; color: #2b2f36; text-align: center;
+}
+.anim-aula .anim-controles {
+  display: flex; align-items: center; gap: 0.5em; font-size: 0.5em;
+}
+.anim-aula button {
+  font: inherit; padding: 0.25em 0.8em; border: 1px solid #1d3b53;
+  border-radius: 4px; background: #1d3b53; color: #ffffff; cursor: pointer;
+}
+.anim-aula button.anim-recomecar { background: #ffffff; color: #1d3b53; }
+/* Botoes de alternar: o rotulo nao muda; o estado vai no aria-pressed e na aparencia. */
+.anim-aula button[aria-pressed] { background: #ffffff; color: #1d3b53; }
+.anim-aula button[aria-pressed="true"] { background: #e3ebf2; }
+.anim-aula button[aria-pressed="true"]::before { content: "\2713\00a0"; content: "\2713\00a0" / ""; }
+.anim-aula button[aria-pressed="false"] { text-decoration: line-through; color: #6b6b6b; border-color: #6b6b6b; }
+.anim-aula button[hidden] { display: none; }
+.anim-aula .anim-posicao { flex: 1; min-width: 6em; accent-color: #c8553d; cursor: pointer; }
+.anim-aula .anim-relogio { min-width: 6.5em; text-align: right; color: #595959; }
+/* Foco visivel para quem navega pelo teclado. */
+.anim-aula button:focus-visible, .anim-aula .anim-posicao:focus-visible,
+.anim-aula summary:focus-visible {
+  outline: 3px solid #c8553d; outline-offset: 2px;
+}
+.anim-aula .anim-transcricao {
+  margin-top: 0.3em; font-size: 0.45em; text-align: left; color: #2b2f36;
+}
+.anim-aula .anim-transcricao summary { cursor: pointer; color: #1d3b53; }
+/* Transcricao aberta: o quadro da lugar ao texto, que rola dentro do slide. */
+.anim-aula .anim-transcricao[open] { max-height: 24em; overflow-y: auto; }
+.anim-aula:has(.anim-transcricao[open]) canvas { display: none; }
+.anim-aula .anim-transcricao p { margin: 0.3em 0; }
+@media (prefers-reduced-motion: reduce) {
+  .anim-aula * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

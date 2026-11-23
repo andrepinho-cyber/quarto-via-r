@@ -1,0 +1,29 @@
+---
+title: "Tocador · com narração (voz do autor)"
+format:
+  revealjs:
+    html-math-method: mathml
+---
+
+```{r}
+#| include: false
+source("R/animacao.R")
+source("animacao/config_narrada.R")
+audio <- "animacao/audio/narracao.mp3"
+stopifnot(file.exists(audio))
+duracoes <- readRDS("animacao/audio/duracoes.rds")
+```
+
+## Antes de iniciar
+
+O que acontece com a proporção de caras quando o número de lançamentos de
+uma moeda equilibrada cresce? Anote a sua previsão.
+
+A narração desta animação foi gravada com a voz do autor.
+
+## Proporção de caras
+
+```{r}
+#| results: asis
+animacao_slide("narrada", config_narrada(duracoes), "animacao/cena_proporcao.js", audio = audio)
+```

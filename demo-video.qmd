@@ -1,0 +1,22 @@
+---
+title: "Vídeo de exemplo com legenda"
+subtitle: "Do roteiro ao vídeo · dados simulados · voz do autor"
+format:
+  revealjs:
+    width: 1280
+    height: 720
+---
+
+## O vídeo no slide
+
+<!-- Vídeo e legenda copiados de cap5/exemplos/c5-01-video/video/. Por servidor
+(o site), o <track> carrega o .vtt; por file://, o Chrome o recusa. -->
+
+```{=html}
+<video controls preload="metadata" style="width: 88%;">
+  <source src="video/video.mp4" type="video/mp4">
+  <track src="video/video.vtt" kind="captions" srclang="pt-BR" label="Português" default>
+</video>
+```
+
+Vídeo curto e substituível: dados simulados e narração com a voz do autor.

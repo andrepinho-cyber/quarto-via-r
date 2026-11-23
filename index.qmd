@@ -1,0 +1,19 @@
+---
+title: "Animações narradas · demos"
+---
+
+Site companheiro dos Capítulos 4 e 5 da apostila *Quarto com R para docentes de
+Estatística*. As demos são as mesmas dos exemplos dos capítulos
+(`cap4/exemplos/` e `cap5/exemplos/`); todos os dados são simulados.
+
+| Demo | O que mostra |
+|:---|:---|
+| [Tocador](demo-tocador.qmd) | A cena mínima: proporção de caras, sem áudio |
+| [Narração](demo-narrada.qmd) | A mesma cena com narração em áudio (voz do autor) |
+| [Cenas](demo-cenas.qmd) | Intervalos de confiança e área sob a Normal padrão |
+| [gganimate e OJS](demo-gganimate.qmd) | GIF, MP4 e um controle deslizante, sem o tocador |
+| [Vídeo](demo-video.qmd) | Vídeo de exemplo do Cap. 5 num slide, com legenda `.vtt` |
+
+A demo de narração e a demo de vídeo usam a voz do autor; a demo do gganimate não tem voz.
+
+Código do tocador e dos scripts: licença MIT. Texto: CC BY-NC-SA 4.0.

@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: _site
+  execute-dir: project
+  resources:
+    - animacao/audio/narracao.mp3
+    - proporcao.gif
+    - proporcao.mp4
+    - video/video.mp4
+    - video/video.vtt
+lang: pt-BR
+execute:
+  echo: false
+  warning: true
+  message: false
+  cache: false
+website:
+  title: "Animações narradas · demos"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: demo-tocador.qmd
+        text: Tocador
+      - href: demo-narrada.qmd
+        text: Narração
+      - href: demo-cenas.qmd
+        text: Cenas
+      - href: demo-gganimate.qmd
+        text: gganimate e OJS
+      - href: demo-video.qmd
+        text: Vídeo
+format:
+  html:
+    theme: cosmo

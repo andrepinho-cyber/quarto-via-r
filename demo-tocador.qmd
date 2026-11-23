@@ -1,0 +1,24 @@
+---
+title: "Tocador · cena mínima"
+format:
+  revealjs:
+    html-math-method: mathml
+---
+
+```{r}
+#| include: false
+source("R/animacao.R")
+source("animacao/config_proporcao.R")
+```
+
+## Antes de iniciar
+
+O que acontece com a proporção de caras quando o número de lançamentos de
+uma moeda equilibrada cresce? Anote a sua previsão.
+
+## Proporção de caras
+
+```{r}
+#| results: asis
+animacao_slide("proporcao", config_proporcao(), "animacao/cena_proporcao.js")
+```

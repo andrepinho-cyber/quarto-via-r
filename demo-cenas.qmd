@@ -1,0 +1,27 @@
+---
+title: "Cenas de exemplo"
+format:
+  revealjs:
+    html-math-method: mathml
+---
+
+```{r}
+#| include: false
+source("R/animacao.R")
+source("animacao/config_intervalos.R")
+source("animacao/config_normal.R")
+```
+
+## Intervalos de confiança
+
+```{r}
+#| results: asis
+animacao_slide("intervalos", config_intervalos(), "animacao/cena_intervalos.js")
+```
+
+## Área sob a Normal padrão
+
+```{r}
+#| results: asis
+animacao_slide("normal", config_normal(), "animacao/cena_normal.js")
+```
